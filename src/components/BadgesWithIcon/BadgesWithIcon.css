@@ -1,0 +1,45 @@
+/* CSS Styles for Badges with Icon Component */
+.uedp-badgeswithicon {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  width: fit-content;
+}
+
+/* Self Delivery State - Light Blue background, Dark Blue text & icon */
+.uedp-badgeswithicon--self-delivery {
+  background-color: var(--uedp-sky-50, #EFF6FF);
+  color: var(--uedp-blue-700, #1D4ED8);
+}
+
+.uedp-badgeswithicon--self-delivery .uedp-badgeswithicon-icon {
+  color: var(--uedp-blue-700, #1D4ED8);
+}
+
+/* MyHub Delivery State - Light Green background, Dark Green text & icon */
+.uedp-badgeswithicon--myhub-delivery {
+  background-color: var(--uedp-emerald-50, #F0FDF4);
+  color: var(--uedp-emerald-800, #166534);
+}
+
+.uedp-badgeswithicon--myhub-delivery .uedp-badgeswithicon-icon {
+  color: var(--uedp-emerald-800, #166534);
+}
+
+.uedp-badgeswithicon-icon {
+  flex-shrink: 0;
+}
+
+.uedp-badgeswithicon-text {
+  white-space: nowrap;
+}

@@ -1,0 +1,215 @@
+/* CSS Styles for Order Tracking. Component - Figma Node 188:7933 */
+.uedp-ordertracking {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 373px;
+  border-radius: 12px;
+  font-family: inherit;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Background Fills for Variants */
+.uedp-ordertracking--default,
+.uedp-ordertracking--opend {
+  background-color: #EFF6FF;
+}
+
+.uedp-ordertracking--delivered {
+  background-color: #F0FDF4;
+}
+
+.uedp-ordertracking--cancelled {
+  background-color: #FEF2F2;
+}
+
+/* Collapsed Header Bar (60px) */
+.uedp-ordertracking-collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.uedp-ordertracking-collapsed-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uedp-ordertracking-indicator-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uedp-ordertracking--default .uedp-ordertracking-indicator-circle {
+  background-color: #3488DC;
+  border: 1px solid #BAE6FD;
+}
+
+.uedp-ordertracking--delivered .uedp-ordertracking-indicator-circle {
+  background-color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.uedp-ordertracking--cancelled .uedp-ordertracking-indicator-circle {
+  background-color: #B91C1C;
+  border: 1px solid #FECDD3;
+}
+
+.uedp-ordertracking-indicator-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.uedp-ordertracking-collapsed-title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.uedp-ordertracking--default .uedp-ordertracking-collapsed-title {
+  color: #1E293B;
+}
+
+.uedp-ordertracking--delivered .uedp-ordertracking-collapsed-title {
+  color: #15803D;
+}
+
+.uedp-ordertracking--cancelled .uedp-ordertracking-collapsed-title {
+  color: #B91C1C;
+}
+
+.uedp-ordertracking-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.uedp-ordertracking--default .uedp-ordertracking-chevron,
+.uedp-ordertracking--opend .uedp-ordertracking-chevron {
+  color: #3488DC;
+}
+
+.uedp-ordertracking--delivered .uedp-ordertracking-chevron {
+  color: #15803D;
+}
+
+.uedp-ordertracking--cancelled .uedp-ordertracking-chevron {
+  color: #B91C1C;
+}
+
+/* Expanded View (250px) */
+.uedp-ordertracking-expanded {
+  padding: 16px;
+}
+
+.uedp-ordertracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.uedp-ordertracking-timeline {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.uedp-ordertracking-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+}
+
+.uedp-ordertracking-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 26px;
+  flex-shrink: 0;
+}
+
+.uedp-ordertracking-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Step States */
+/* Completed Step */
+.uedp-ordertracking-step--completed .uedp-ordertracking-dot {
+  background-color: #3488DC;
+  border: 1px solid #3488DC;
+}
+
+.uedp-ordertracking-check {
+  color: #FFFFFF;
+}
+
+/* Current Step */
+.uedp-ordertracking-step--current .uedp-ordertracking-dot {
+  background-color: #3488DC;
+  border: 3px solid #BAE6FD;
+}
+
+.uedp-ordertracking-inner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #EFF6FF;
+}
+
+/* Pending Step */
+.uedp-ordertracking-step--pending .uedp-ordertracking-dot {
+  background-color: transparent;
+  border: 1.5px solid #CBD5E1;
+}
+
+/* Connector Line */
+.uedp-ordertracking-line {
+  width: 2px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 50px;
+}
+
+.uedp-ordertracking-step--completed .uedp-ordertracking-line {
+  background-color: #3488DC;
+}
+
+.uedp-ordertracking-step--current .uedp-ordertracking-line,
+.uedp-ordertracking-step--pending .uedp-ordertracking-line {
+  background-color: #CBD5E1;
+}
+
+.uedp-ordertracking-step-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #1E293B;
+  padding-top: 1px;
+}
+

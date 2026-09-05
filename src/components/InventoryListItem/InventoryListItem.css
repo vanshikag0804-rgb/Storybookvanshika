@@ -1,0 +1,243 @@
+/* CSS Styles for Inventory List Item Component - Figma Node 106:9640 */
+.uedp-inventorylistitem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 398px;
+  height: 92px;
+  padding: 8px;
+  gap: 12px;
+  border-radius: 14px;
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  border: 1px solid var(--uedp-slate-100, #F1F5F9);
+  font-family: inherit;
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.uedp-inventorylistitem-image-container {
+  box-sizing: border-box;
+  width: 76px;
+  height: 76px;
+  min-width: 76px;
+  min-height: 76px;
+  border-radius: 10px;
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  border: 1px solid var(--uedp-slate-100, #F1F5F9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.uedp-inventorylistitem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.uedp-inventorylistitem-badge-overlay {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--uedp-slate-100, #F1F5F9);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.uedp-inventorylistitem-badge-overlay span {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--uedp-slate-600, #475569);
+}
+
+.uedp-inventorylistitem-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  height: 76px;
+  min-width: 0;
+}
+
+.uedp-inventorylistitem-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.uedp-inventorylistitem-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--uedp-slate-800, #1E293B);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uedp-inventorylistitem-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--uedp-slate-800, #1E293B);
+  outline: none;
+}
+
+.uedp-inventorylistitem-middle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 16px;
+}
+
+.uedp-inventorylistitem-brand {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--uedp-slate-600, #475569);
+}
+
+.uedp-inventorylistitem-dot {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--uedp-slate-500, #64748B);
+}
+
+.uedp-inventorylistitem-category {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--uedp-slate-500, #64748B);
+}
+
+.uedp-inventorylistitem-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.uedp-inventorylistitem-stock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Stock Progress Capsule Bar - Figma Node 106:9544 (50px x 6px) */
+.uedp-inventorylistitem-stock-bar-track {
+  width: 50px;
+  height: 6px;
+  border-radius: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.uedp-inventorylistitem-stock-bar-fill {
+  height: 100%;
+  border-radius: 40px;
+  transition: width 0.3s ease;
+}
+
+.uedp-inventorylistitem-stock-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* Status variants for Stock Bar Track, Fill & Text */
+/* Default State: Emerald Green (#15803D) */
+.uedp-inventorylistitem--default .uedp-inventorylistitem-stock-bar-track {
+  background-color: #DCFCE7;
+}
+.uedp-inventorylistitem--default .uedp-inventorylistitem-stock-bar-fill {
+  background-color: #15803D;
+}
+.uedp-inventorylistitem--default .uedp-inventorylistitem-stock-text {
+  color: #15803D;
+}
+
+/* Low Stock State: Amber / Orange (#D97706) */
+.uedp-inventorylistitem--low-stock .uedp-inventorylistitem-stock-bar-track {
+  background-color: #FEF3C7;
+}
+.uedp-inventorylistitem--low-stock .uedp-inventorylistitem-stock-bar-fill {
+  background-color: #D97706;
+}
+.uedp-inventorylistitem--low-stock .uedp-inventorylistitem-stock-text {
+  color: #D97706;
+}
+
+/* Out of Stock State: Crimson Red (#B91C1C) */
+.uedp-inventorylistitem--out-of-stock .uedp-inventorylistitem-stock-bar-track {
+  background-color: #FEE2E2;
+}
+.uedp-inventorylistitem--out-of-stock .uedp-inventorylistitem-stock-bar-fill {
+  background-color: #B91C1C;
+}
+.uedp-inventorylistitem--out-of-stock .uedp-inventorylistitem-stock-text {
+  color: #B91C1C;
+}
+
+/* Inactive State: Slate Gray (#94A3B8) */
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-stock-bar-track {
+  background-color: #F1F5F9;
+}
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-stock-bar-fill {
+  background-color: #94A3B8;
+}
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-stock-text {
+  color: #94A3B8;
+}
+
+/* Inactive Status Overrides for Text & Colors */
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-title,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-brand,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-dot,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-category,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-price,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-original-price,
+.uedp-inventorylistitem--inactive .uedp-inventorylistitem-more-btn {
+  color: #94A3B8 !important;
+}
+
+.uedp-inventorylistitem-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.uedp-inventorylistitem-price {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--uedp-slate-800, #1E293B);
+}
+
+.uedp-inventorylistitem-original-price {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--uedp-slate-400, #94A3B8);
+  text-decoration: line-through;
+}
+
+

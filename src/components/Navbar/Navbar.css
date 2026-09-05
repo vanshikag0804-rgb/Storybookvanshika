@@ -1,0 +1,33 @@
+
+.uedp-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--uedp-base-white, #FFFFFF);
+  border-top: 1px solid var(--uedp-slate-200, #E2E8F0);
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.uedp-navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: var(--uedp-slate-500, #64748B);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--uedp-rounded-md, 8px);
+  transition: all 0.2s ease;
+}
+
+.uedp-navbar-item--active {
+  color: var(--uedp-blue-600, #2563EB);
+  font-weight: 600;
+}

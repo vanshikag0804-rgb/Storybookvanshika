@@ -1,0 +1,70 @@
+/* CSS Styles for Checkbox Component */
+.uedp-checkbox {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--uedp-slate-900, #0F172A);
+  transition: all 0.15s ease-in-out;
+}
+
+.uedp-checkbox-box {
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: var(--uedp-rounded-md, 6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+/* Unchecked State - Light grey-blue background, slate border */
+.uedp-checkbox--unchecked .uedp-checkbox-box {
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  border: 1.5px solid var(--uedp-slate-300, #CBD5E1);
+}
+
+.uedp-checkbox--unchecked:hover .uedp-checkbox-box {
+  border-color: var(--uedp-blue-500, #3B82F6);
+  background-color: var(--uedp-slate-100, #F1F5F9);
+}
+
+/* Checked State - Vibrant blue background, white checkmark */
+.uedp-checkbox--checked .uedp-checkbox-box {
+  background-color: var(--uedp-blue-600, #3488DC);
+  border: 1.5px solid var(--uedp-blue-600, #3488DC);
+}
+
+.uedp-checkbox--checked:hover .uedp-checkbox-box {
+  opacity: 0.9;
+}
+
+/* Disabled State */
+.uedp-checkbox--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.uedp-checkbox--disabled .uedp-checkbox-box {
+  background-color: var(--uedp-slate-100, #F1F5F9);
+  border: 1.5px solid var(--uedp-slate-200, #E2E8F0);
+}
+
+.uedp-checkbox-check {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.uedp-checkbox-label {
+  font-weight: 500;
+  line-height: 1.4;
+}

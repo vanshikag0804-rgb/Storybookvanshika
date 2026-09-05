@@ -1,0 +1,102 @@
+/* CSS Styles for Range Slider Component (Node 94:149) */
+
+.uedp-rangeslider {
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  height: 24px;
+  background-color: var(--uedp-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+}
+
+.uedp-rangeslider-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Track Frame 8 (Height 4px, Radius 2px, Fill #F1F5F9) */
+.uedp-rangeslider-track-bg {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--uedp-slate-100, #f1f5f9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Active Selected Range Fill Frame 9 (Height 4px, Fill #3488DC) */
+.uedp-rangeslider-track-fill {
+  position: absolute;
+  top: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--uedp-blue-500, #3488dc);
+  transition: left 0.1s ease, width 0.1s ease;
+}
+
+/* Dual Hidden Range Inputs */
+.uedp-rangeslider-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.uedp-rangeslider-input:disabled {
+  cursor: not-allowed;
+}
+
+/* Thumbs (24px x 24px Circular Discs) */
+.uedp-rangeslider-thumb {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--uedp-blue-500, #3488dc);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+  transition: left 0.1s ease, transform 0.15s ease;
+}
+
+.uedp-rangeslider-thumb--active {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px rgba(52, 136, 220, 0.16);
+}
+
+/* Focused State Inner White Dot (8px x 8px #FFFFFF) */
+.uedp-rangeslider-thumb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--uedp-white, #ffffff);
+}
+
+/* State = Disabled (Track & Thumbs Fill #F1F5F9) */
+.uedp-rangeslider--disabled .uedp-rangeslider-track-fill {
+  background-color: var(--uedp-slate-100, #f1f5f9);
+}
+
+.uedp-rangeslider--disabled .uedp-rangeslider-thumb {
+  background-color: var(--uedp-slate-100, #f1f5f9);
+  box-shadow: none;
+}

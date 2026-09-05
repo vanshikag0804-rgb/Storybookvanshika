@@ -1,0 +1,132 @@
+/* CSS Styles for Order card Component - Figma Node 216:8191 */
+.uedp-ordercard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 405px;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 16px;
+  background-color: var(--uedp-white, #ffffff);
+  border: 1px solid var(--uedp-slate-100, #F1F5F9);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  font-family: inherit;
+  user-select: none;
+}
+
+.uedp-ordercard-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uedp-ordercard-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uedp-ordercard-id {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--uedp-slate-800, #1E293B);
+}
+
+.uedp-ordercard-amount {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--uedp-slate-800, #1E293B);
+}
+
+.uedp-ordercard-header-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uedp-ordercard-items {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--uedp-slate-500, #64748B);
+}
+
+.uedp-ordercard-icon-btn {
+  background-color: var(--uedp-blue-50, #EFF6FF);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3488DC;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease;
+}
+
+.uedp-ordercard-icon-btn:hover {
+  background-color: #DBEAFE;
+}
+
+.uedp-ordercard-address-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.uedp-ordercard-address {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--uedp-slate-500, #64748B);
+  flex: 1;
+}
+
+.uedp-ordercard-map-btn {
+  background-color: var(--uedp-blue-50, #EFF6FF);
+  border: none;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3488DC;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.uedp-ordercard-map-btn:hover {
+  background-color: #DBEAFE;
+}
+
+.uedp-ordercard-badge-row {
+  display: flex;
+  align-items: center;
+}
+
+.uedp-ordercard-tracking-row {
+  width: 100%;
+}
+
+.uedp-ordercard-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.uedp-ordercard-secondary-btn,
+.uedp-ordercard-primary-btn {
+  flex: 1;
+}
+

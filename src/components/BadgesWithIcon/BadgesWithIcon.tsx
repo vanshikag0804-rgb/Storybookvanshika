@@ -1,0 +1,47 @@
+import React from 'react';
+import { Truck, Store } from 'lucide-react';
+import './BadgesWithIcon.css';
+
+export interface BadgesWithIconProps {
+  /** Figma variant parameter: State */
+  State?: 'self delivery' | 'myhub delivery';
+  /** Optional custom text label */
+  label?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+  [key: string]: any;
+}
+
+/**
+ * **badges with icon** React Component
+ * Exact 1-to-1 synchronized implementation from Figma Design System layer `badges with icon`.
+ */
+export const BadgesWithIcon: React.FC<BadgesWithIconProps> = ({
+  State = 'self delivery',
+  label,
+  className = '',
+  style,
+  onClick,
+  ...props
+}) => {
+  const isMyHub = String(State).toLowerCase() === 'myhub delivery';
+  const stateClass = isMyHub ? 'myhub-delivery' : 'self-delivery';
+
+  const defaultText = isMyHub ? 'My Hub delivery' : 'Self delivery';
+  const displayLabel = label || defaultText;
+
+  const IconComponent = isMyHub ? Store : Truck;
+
+  return (
+    <div
+      className={`uedp-badgeswithicon uedp-badgeswithicon--${stateClass} ${className}`}
+      style={style}
+      onClick={onClick}
+      {...props}
+    >
+      <IconComponent size={14} className="uedp-badgeswithicon-icon" />
+      <span className="uedp-badgeswithicon-text">{displayLabel}</span>
+    </div>
+  );
+};

@@ -1,0 +1,258 @@
+/* CSS Styles for Payment Bottom Sheet Component (Node 94:8538) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@600&display=swap');
+
+.uedp-paymentbottomsheet {
+  box-sizing: border-box;
+  width: 430px;
+  max-width: 100%;
+  background-color: var(--uedp-white, #ffffff);
+  border-radius: 24px 24px 0px 0px;
+  padding: 24px 16px 24px 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--uedp-slate-800, #1e293b);
+  box-shadow: 0px -4px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.uedp-paymentbottomsheet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Grab Handle */
+.uedp-paymentbottomsheet-handle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4px;
+}
+
+.uedp-paymentbottomsheet-handle {
+  width: 53px;
+  height: 4px;
+  border-radius: 120px;
+  background-color: var(--uedp-slate-300, #cbd5e1);
+}
+
+/* Title */
+.uedp-paymentbottomsheet-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--uedp-slate-800, #1e293b);
+}
+
+/* Switching Tabs */
+.uedp-paymentbottomsheet-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-tab {
+  flex: 1;
+  height: 48px;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background-color: var(--uedp-white, #ffffff);
+  border: 1px solid var(--uedp-blue-500, #3488dc);
+  color: var(--uedp-blue-700, #2262a0);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.uedp-paymentbottomsheet-tab--active {
+  background-color: var(--uedp-blue-500, #3488dc);
+  border-color: var(--uedp-blue-500, #3488dc);
+  color: var(--uedp-white, #ffffff);
+}
+
+.uedp-paymentbottomsheet-tab:hover:not(.uedp-paymentbottomsheet-tab--active) {
+  background-color: #f1f7fe;
+}
+
+/* Form Section */
+.uedp-paymentbottomsheet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-field--bill {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.uedp-paymentbottomsheet-field--discount {
+  flex: 1;
+}
+
+.uedp-paymentbottomsheet-field--half {
+  flex: 1;
+  width: calc(50% - 12px);
+}
+
+.uedp-paymentbottomsheet-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--uedp-slate-800, #1e293b);
+  display: block;
+}
+
+.uedp-paymentbottomsheet-input-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+  border-radius: 8px;
+  background-color: var(--uedp-blue-50, #eff7fe);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.uedp-paymentbottomsheet-input-wrapper--focused {
+  border-color: var(--uedp-blue-500, #3488dc);
+}
+
+.uedp-paymentbottomsheet-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--uedp-slate-800, #1e293b);
+  padding: 0;
+}
+
+.uedp-paymentbottomsheet-input::placeholder {
+  color: var(--uedp-slate-500, #64748b);
+  font-weight: 400;
+}
+
+.uedp-paymentbottomsheet-input--bill {
+  font-weight: 600;
+  color: var(--uedp-blue-600, #2d7bc4);
+}
+
+.uedp-paymentbottomsheet-input--highlighted {
+  font-weight: 600;
+  color: var(--uedp-slate-800, #1e293b);
+}
+
+/* Rows */
+.uedp-paymentbottomsheet-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-row--split {
+  gap: 24px;
+}
+
+/* Footer Section */
+.uedp-paymentbottomsheet-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.uedp-paymentbottomsheet-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-info-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.uedp-paymentbottomsheet-info-text {
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--uedp-slate-600, #475569);
+}
+
+.uedp-paymentbottomsheet-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.uedp-paymentbottomsheet-btn {
+  flex: 1;
+  height: 40px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  outline: none;
+}
+
+.uedp-paymentbottomsheet-btn:hover {
+  opacity: 0.92;
+}
+
+.uedp-paymentbottomsheet-btn:active {
+  transform: translateY(1px);
+}
+
+.uedp-paymentbottomsheet-btn--secondary {
+  background-color: var(--uedp-blue-50, #eff7fe);
+  color: var(--uedp-blue-600, #2d7bc4);
+}
+
+.uedp-paymentbottomsheet-btn--primary {
+  background-color: var(--uedp-blue-700, #2262a0);
+  color: var(--uedp-blue-50, #eff7fe);
+}

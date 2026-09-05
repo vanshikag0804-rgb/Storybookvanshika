@@ -1,0 +1,86 @@
+/* CSS Styles for OTP Cell Component - Figma Node 94:120 */
+.uedp-otpcell {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--uedp-rounded-lg, 8px);
+  background-color: var(--uedp-white, #ffffff);
+  border: 1px solid var(--uedp-slate-200, #E2E8F0);
+  font-family: inherit;
+  transition: all 0.15s ease-in-out;
+  cursor: text;
+  flex-shrink: 0;
+}
+
+.uedp-otpcell-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--uedp-slate-800, #1E293B);
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  caret-color: #3488DC;
+}
+
+.uedp-otpcell-input::placeholder {
+  color: var(--uedp-slate-400, #94A3B8);
+}
+
+/* Variant States */
+/* Empty */
+.uedp-otpcell--empty {
+  border-color: var(--uedp-slate-200, #E2E8F0);
+  background-color: var(--uedp-white, #ffffff);
+}
+
+/* Filled */
+.uedp-otpcell--filled {
+  border-color: var(--uedp-slate-200, #E2E8F0);
+  background-color: var(--uedp-white, #ffffff);
+}
+
+/* Focused */
+.uedp-otpcell--focused,
+.uedp-otpcell:focus-within {
+  border-color: #3488DC;
+  border-width: 1.5px;
+  background-color: var(--uedp-white, #ffffff);
+  box-shadow: 0 0 0 3px rgba(52, 136, 220, 0.15);
+}
+
+/* Error */
+.uedp-otpcell--error {
+  border-color: #EF4444;
+  border-width: 1.5px;
+  background-color: var(--uedp-white, #ffffff);
+}
+
+.uedp-otpcell--error .uedp-otpcell-input {
+  color: #EF4444;
+}
+
+.uedp-otpcell--disabled {
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  border-color: var(--uedp-slate-200, #E2E8F0);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.uedp-otpcell--disabled .uedp-otpcell-input {
+  cursor: not-allowed;
+}
+

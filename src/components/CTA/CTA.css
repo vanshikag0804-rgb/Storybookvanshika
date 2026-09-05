@@ -1,0 +1,62 @@
+/* CTA Component Styles */
+.uedp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--uedp-gap-2, 8px);
+  padding: 10px 16px;
+  border-radius: var(--uedp-rounded-md, 10px);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+}
+
+.uedp-cta--primary {
+  background-color: var(--uedp-blue-600, #2563EB);
+  color: var(--uedp-base-white, #FFFFFF);
+  border-color: var(--uedp-blue-600, #2563EB);
+}
+
+.uedp-cta--primary:hover:not(:disabled) {
+  background-color: var(--uedp-blue-700, #1D4ED8);
+}
+
+.uedp-cta--secondary {
+  background-color: var(--uedp-slate-100, #F1F5F9);
+  color: var(--uedp-slate-800, #1E293B);
+  border-color: var(--uedp-slate-300, #CBD5E1);
+}
+
+.uedp-cta--secondary:hover:not(:disabled) {
+  background-color: var(--uedp-slate-200, #E2E8F0);
+}
+
+.uedp-cta--loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.uedp-cta--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--uedp-slate-200, #E2E8F0);
+  color: var(--uedp-slate-400, #94A3B8);
+  border-color: transparent;
+}
+
+.uedp-cta--pressed {
+  transform: scale(0.98);
+}
+
+.uedp-cta-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

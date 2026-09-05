@@ -1,0 +1,43 @@
+/* CSS Styles for Chip Component - Non-hoverable / Static Display */
+.uedp-chip {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 6px 14px;
+  border-radius: var(--uedp-rounded-2xl, 16px);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;
+  cursor: default;
+  outline: none;
+  user-select: none;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* Default State - Light grey-blue fill, dark slate text */
+.uedp-chip--default {
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  color: var(--uedp-slate-700, #334155);
+}
+
+/* Selected State - Vibrant blue fill, white text */
+.uedp-chip--selected {
+  background-color: var(--uedp-blue-600, #3488DC);
+  color: var(--uedp-base-white, #FFFFFF);
+}
+
+/* Disabled State - Muted fill and text */
+.uedp-chip--disabled {
+  background-color: var(--uedp-slate-50, #F8FAFC);
+  color: var(--uedp-slate-400, #94A3B8);
+  opacity: 0.6;
+}
+
+.uedp-chip-label {
+  display: inline-block;
+}

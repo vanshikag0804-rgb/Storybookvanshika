@@ -1,0 +1,31 @@
+/* CSS Styles for Progress Bar Component (Node 94:165) */
+
+.uedp-progressbar {
+  box-sizing: border-box;
+  width: 320px;
+  max-width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--uedp-slate-100, #f1f5f9);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.uedp-progressbar-fill {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--uedp-blue-500, #3488dc);
+  transition: width 0.3s ease-in-out, background-color 0.2s ease;
+}
+
+/* State = Error */
+.uedp-progressbar--error .uedp-progressbar-fill {
+  background-color: var(--uedp-red-600, #dc2626);
+}
+
+/* State = Success */
+.uedp-progressbar--success .uedp-progressbar-fill {
+  background-color: var(--uedp-emerald-600, #16a34a);
+}

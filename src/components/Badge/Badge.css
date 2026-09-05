@@ -1,0 +1,35 @@
+/* CSS Styles for Badge Component - Figma Synchronized States */
+.uedp-badge {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  width: fit-content;
+}
+
+/* Default State - Light Blue background, Dark Blue text */
+.uedp-badge--default {
+  background-color: var(--uedp-sky-50, #EFF6FF);
+  color: var(--uedp-blue-700, #1D4ED8);
+}
+
+/* Success State - Light Green background, Dark Green text */
+.uedp-badge--success {
+  background-color: var(--uedp-emerald-50, #F0FDF4);
+  color: var(--uedp-emerald-800, #166534);
+}
+
+/* Error State - Light Red background, Dark Red text */
+.uedp-badge--error {
+  background-color: var(--uedp-red-50, #FEF2F2);
+  color: var(--uedp-red-800, #991B1B);
+}

@@ -1,0 +1,131 @@
+/* CSS Styles for Quantity Control Component (Node 106:9284) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap');
+
+.uedp-quantitycontrol {
+  box-sizing: border-box;
+  width: 110px;
+  height: 36px;
+  border-radius: 40px;
+  padding: 10px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+/* State = Add */
+.uedp-quantitycontrol--add {
+  background-color: var(--uedp-blue-50, #edf6ff);
+}
+
+.uedp-quantitycontrol-add-btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--uedp-blue-600, #256fb7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uedp-quantitycontrol--add:hover {
+  background-color: #dceefe;
+}
+
+/* State = Default & Focused (Solid Blue Background #2262A0) */
+.uedp-quantitycontrol--default,
+.uedp-quantitycontrol--focused {
+  background-color: var(--uedp-blue-700, #2262a0);
+}
+
+.uedp-quantitycontrol-counter-group {
+  box-sizing: border-box;
+  width: 98px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uedp-quantitycontrol-btn {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--uedp-white, #ffffff);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.uedp-quantitycontrol-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.uedp-quantitycontrol-btn:active {
+  transform: scale(0.95);
+}
+
+/* Default Counter Box (38px x 22px, White Border) */
+.uedp-quantitycontrol-val-box {
+  box-sizing: border-box;
+  width: 38px;
+  height: 22px;
+  border-radius: 3px;
+  border: 1px solid var(--uedp-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uedp-quantitycontrol-val-box span {
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--uedp-white, #ffffff);
+}
+
+/* Focused Counter Box (38px x 24px, White Filled Background) */
+.uedp-quantitycontrol-val-box--focused {
+  width: 38px;
+  height: 24px;
+  background-color: var(--uedp-white, #ffffff);
+  border: none;
+}
+
+.uedp-quantitycontrol-val-box--focused span {
+  color: var(--uedp-blue-600, #256fb7);
+}
+
+/* State = Inactive / Ineactive */
+.uedp-quantitycontrol--ineactive,
+.uedp-quantitycontrol--inactive {
+  background-color: var(--uedp-slate-50, #f8fafc);
+  cursor: not-allowed;
+}
+
+.uedp-quantitycontrol-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--uedp-slate-400, #94a3b8);
+}

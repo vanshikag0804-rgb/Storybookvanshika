@@ -1,0 +1,2717 @@
+[
+  {
+    "name": "Search Field",
+    "id": "81:11296",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "81:11295",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Disabled",
+        "id": "82:14",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Filled",
+        "id": "82:2",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Focused",
+        "id": "81:11297",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46988"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.545098066329956,
+            "g": 0.772549033164978,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 8
+      }
+    ]
+  },
+  {
+    "name": "Toggle",
+    "id": "82:30",
+    "variants": [
+      {
+        "name": "State=On",
+        "id": "82:29",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 999,
+        "padding": {}
+      },
+      {
+        "name": "State=Off",
+        "id": "82:31",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 999,
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "icons",
+    "id": "82:38",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "82:37",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 999,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Disabled",
+        "id": "82:43",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 999,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Pressed",
+        "id": "82:39",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 999,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Icon Button",
+    "id": "82:53",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "82:52",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 8,
+        "padding": {}
+      },
+      {
+        "name": "State=Disabled",
+        "id": "82:58",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 8,
+        "padding": {}
+      },
+      {
+        "name": "State=Pressed",
+        "id": "82:54",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 8,
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "Checkbox",
+    "id": "85:70",
+    "variants": [
+      {
+        "name": "State=Unchecked",
+        "id": "85:69",
+        "boundVariables": {
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46989"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 6,
+        "padding": {}
+      },
+      {
+        "name": "State=Disabled",
+        "id": "85:74",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46987"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.7960784435272217,
+            "g": 0.8352941274642944,
+            "b": 0.8823529481887817
+          }
+        ],
+        "cornerRadius": 6,
+        "padding": {}
+      },
+      {
+        "name": "State=Checked",
+        "id": "85:71",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "Radio Button",
+    "id": "85:77",
+    "variants": [
+      {
+        "name": "State=Unselected",
+        "id": "85:76",
+        "boundVariables": {
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46989"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 110,
+        "padding": {}
+      },
+      {
+        "name": "State=Selected",
+        "id": "85:78",
+        "boundVariables": {
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46989"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 110,
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "Badge",
+    "id": "85:83",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "85:82",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {
+          "top": 10,
+          "right": 8,
+          "bottom": 10,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Error",
+        "id": "85:88",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46971"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9960784316062927,
+            "g": 0.9490196108818054,
+            "b": 0.9490196108818054
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {
+          "top": 10,
+          "right": 8,
+          "bottom": 10,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Success",
+        "id": "85:86",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46969"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9411764740943909,
+            "g": 0.9921568632125854,
+            "b": 0.95686274766922
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {
+          "top": 10,
+          "right": 8,
+          "bottom": 10,
+          "left": 8
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Text Input",
+    "id": "90:105",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "90:104",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46985"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Disabled",
+        "id": "90:110",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Filled",
+        "id": "90:108",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46985"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Focused",
+        "id": "90:106",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46989"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 12,
+          "right": 16,
+          "bottom": 12,
+          "left": 16
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "OTP Cell",
+    "id": "94:120",
+    "variants": [
+      {
+        "name": "State=Empty",
+        "id": "94:119",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46985"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909
+          }
+        ],
+        "cornerRadius": 8,
+        "padding": {}
+      },
+      {
+        "name": "State=Error",
+        "id": "94:122",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46991"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.2666666805744171,
+            "b": 0.2666666805744171
+          }
+        ],
+        "cornerRadius": 8,
+        "padding": {}
+      },
+      {
+        "name": "State=Focused",
+        "id": "94:121",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46989"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 8,
+        "padding": {}
+      },
+      {
+        "name": "State=Filled",
+        "id": "94:118",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46985"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909
+          }
+        ],
+        "cornerRadius": 8,
+        "padding": {
+          "top": 10,
+          "right": 10,
+          "bottom": 10,
+          "left": 10
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Chip",
+    "id": "94:129",
+    "variants": [
+      {
+        "name": "State=Default",
+        "id": "94:128",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "right": 12,
+          "left": 12
+        }
+      },
+      {
+        "name": "State=Selected",
+        "id": "94:130",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "right": 12,
+          "left": 12
+        }
+      },
+      {
+        "name": "State=Disabled",
+        "id": "94:137",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "padding": {
+          "right": 12,
+          "left": 12
+        }
+      }
+    ]
+  },
+  {
+    "name": "Range Slider",
+    "id": "94:149",
+    "variants": [
+      {
+        "name": "State = Default",
+        "id": "94:143",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      },
+      {
+        "name": "State = Disabled",
+        "id": "94:157",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      },
+      {
+        "name": "State = Focused",
+        "id": "94:150",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "progress bar",
+    "id": "94:165",
+    "variants": [
+      {
+        "name": "State = Default",
+        "id": "94:164",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 4,
+        "padding": {},
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Error",
+        "id": "94:168",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 4,
+        "padding": {},
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Success",
+        "id": "94:166",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 4,
+        "padding": {},
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "CTA",
+    "id": "168:7679",
+    "variants": [
+      {
+        "name": "State=Default, type=Primary",
+        "id": "168:7678",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46923"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Default, type=Secondary",
+        "id": "174:7704",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Loading, type=Primary",
+        "id": "168:7688",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Loading, type=Secondary",
+        "id": "174:7710",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46988"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.545098066329956,
+            "g": 0.772549033164978,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Disabled, type=Primary",
+        "id": "168:7686",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Disabled, type=Secondary",
+        "id": "174:7708",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46928"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46985"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.886274516582489,
+            "g": 0.9098039269447327,
+            "b": 0.9411764740943909
+          }
+        ],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Pressed, type=Primary",
+        "id": "168:7684",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46924"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.1764705926179886,
+            "g": 0.48235294222831726,
+            "b": 0.7686274647712708
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=Pressed, type=Secondary",
+        "id": "174:7706",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46967"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.20392157137393951,
+            "g": 0.5333333611488342,
+            "b": 0.8627451062202454
+          }
+        ],
+        "cornerRadius": 10,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 8
+      }
+    ]
+  },
+  {
+    "name": "badges with icon",
+    "id": "216:8072",
+    "variants": [
+      {
+        "name": "State=self delivery",
+        "id": "216:8071",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {
+          "top": 6,
+          "right": 10,
+          "bottom": 6,
+          "left": 10
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=myhub delivery",
+        "id": "216:8070",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46969"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9411764740943909,
+            "g": 0.9921568632125854,
+            "b": 0.95686274766922
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "padding": {
+          "top": 6,
+          "right": 10,
+          "bottom": 6,
+          "left": 10
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Product Card",
+    "id": "106:9050",
+    "variants": [
+      {
+        "name": "State = Default",
+        "id": "106:9228",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Added",
+        "id": "106:9203",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Edit",
+        "id": "106:9048",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Low Stock",
+        "id": "106:9178",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Inactive",
+        "id": "106:9267",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Store header",
+    "id": "106:9394",
+    "variants": [
+      {
+        "name": "State=Offline",
+        "id": "106:9393",
+        "boundVariables": {},
+        "fills": [],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 16
+      },
+      {
+        "name": "State=online",
+        "id": "106:9392",
+        "boundVariables": {},
+        "fills": [],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 16
+      }
+    ]
+  },
+  {
+    "name": "Quantity Control",
+    "id": "106:9284",
+    "variants": [
+      {
+        "name": "State = Add",
+        "id": "106:9285",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 0.930769681930542,
+            "g": 0.9653849005699158,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 40,
+        "padding": {
+          "top": 10,
+          "right": 6,
+          "bottom": 10,
+          "left": 6
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State=Ineactive",
+        "id": "106:9287",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 40,
+        "padding": {
+          "top": 10,
+          "right": 6,
+          "bottom": 10,
+          "left": 6
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Default",
+        "id": "106:9289",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46980"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.13333334028720856,
+            "g": 0.3843137323856354,
+            "b": 0.6274510025978088
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 40,
+        "padding": {
+          "top": 10,
+          "right": 6,
+          "bottom": 10,
+          "left": 6
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "State = Focused",
+        "id": "106:9302",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46980"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.13333334028720856,
+            "g": 0.3843137323856354,
+            "b": 0.6274510025978088
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 40,
+        "padding": {
+          "top": 10,
+          "right": 6,
+          "bottom": 10,
+          "left": 6
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Inventory List Item",
+    "id": "106:9640",
+    "variants": [
+      {
+        "name": "Status=Default",
+        "id": "106:9639",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 14,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status=Low Stock",
+        "id": "106:9637",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 14,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status=Out of Stock",
+        "id": "106:9636",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 14,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status=Inactive",
+        "id": "106:9638",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46965"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9725490212440491,
+            "g": 0.9803921580314636,
+            "b": 0.9882352948188782
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 14,
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Revenue Graph",
+    "id": "254:10429",
+    "variants": [
+      {
+        "name": "Range = 7D",
+        "id": "254:10428",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46987"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.7960784435272217,
+            "g": 0.8352941274642944,
+            "b": 0.8823529481887817
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 14,
+          "right": 14,
+          "bottom": 14,
+          "left": 14
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Range = 30D",
+        "id": "254:10427",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46987"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.7960784435272217,
+            "g": 0.8352941274642944,
+            "b": 0.8823529481887817
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 14,
+          "right": 14,
+          "bottom": 14,
+          "left": 14
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Range = 90D",
+        "id": "254:10426",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46987"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.7960784435272217,
+            "g": 0.8352941274642944,
+            "b": 0.8823529481887817
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 14,
+          "right": 14,
+          "bottom": 14,
+          "left": 14
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Range = 1Y",
+        "id": "254:10425",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46987"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.7960784435272217,
+            "g": 0.8352941274642944,
+            "b": 0.8823529481887817
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 14,
+          "right": 14,
+          "bottom": 14,
+          "left": 14
+        },
+        "itemSpacing": 10
+      }
+    ]
+  },
+  {
+    "name": "Payment Bottom Sheet",
+    "id": "94:8538",
+    "variants": [
+      {
+        "name": "State = UPI",
+        "id": "94:8346",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46939"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {
+          "top": 24,
+          "right": 16,
+          "bottom": 24,
+          "left": 16
+        },
+        "itemSpacing": 32
+      },
+      {
+        "name": "State = Cash",
+        "id": "94:8606",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46939"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {
+          "top": 24,
+          "right": 16,
+          "bottom": 24,
+          "left": 16
+        },
+        "itemSpacing": 32
+      },
+      {
+        "name": "State = Card",
+        "id": "94:8539",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46939"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {
+          "top": 24,
+          "right": 16,
+          "bottom": 24,
+          "left": 16
+        },
+        "itemSpacing": 32
+      }
+    ]
+  },
+  {
+    "name": "Order card",
+    "id": "216:8191",
+    "variants": [
+      {
+        "name": "State=new",
+        "id": "216:8190",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46972"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 16
+      },
+      {
+        "name": "State = active",
+        "id": "216:8189",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46972"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 16
+      },
+      {
+        "name": "State=completed",
+        "id": "232:8463",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46972"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 16
+      },
+      {
+        "name": "State=cancelled",
+        "id": "232:8572",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46972"
+            }
+          ],
+          "strokes": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46986"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [
+          {
+            "r": 0.9450980424880981,
+            "g": 0.9607843160629272,
+            "b": 0.9764705896377563
+          }
+        ],
+        "cornerRadius": 16,
+        "padding": {
+          "top": 10,
+          "right": 16,
+          "bottom": 10,
+          "left": 16
+        },
+        "itemSpacing": 16
+      }
+    ]
+  },
+  {
+    "name": "Order Tracking.",
+    "id": "188:7933",
+    "variants": [
+      {
+        "name": "Status = Default",
+        "id": "188:7932",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 12,
+        "padding": {
+          "right": 16,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status = delivered",
+        "id": "232:8540",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46969"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9411764740943909,
+            "g": 0.9921568632125854,
+            "b": 0.95686274766922
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 12,
+        "padding": {
+          "right": 16,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status=cancelled",
+        "id": "232:8561",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46971"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9960784316062927,
+            "g": 0.9490196108818054,
+            "b": 0.9490196108818054
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 12,
+        "padding": {
+          "right": 16,
+          "left": 16
+        },
+        "itemSpacing": 10
+      },
+      {
+        "name": "Status = opend",
+        "id": "188:7931",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46968"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 0.9372549057006836,
+            "g": 0.9686274528503418,
+            "b": 0.9960784316062927
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 12,
+        "padding": {
+          "top": 16,
+          "right": 16,
+          "bottom": 16,
+          "left": 16
+        },
+        "itemSpacing": 12
+      }
+    ]
+  },
+  {
+    "name": "Navbar",
+    "id": "246:9449",
+    "variants": [
+      {
+        "name": "Active = POS",
+        "id": "246:9448",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      },
+      {
+        "name": "Active = Inventory",
+        "id": "246:9446",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      },
+      {
+        "name": "Active = Orders",
+        "id": "246:9447",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      },
+      {
+        "name": "Active = Dashboard",
+        "id": "246:9445",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {}
+      }
+    ]
+  },
+  {
+    "name": "inventory navbar",
+    "id": "294:10681",
+    "variants": [
+      {
+        "name": "State=active",
+        "id": "294:10680",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=in-active",
+        "id": "294:10679",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      },
+      {
+        "name": "State=out of stock",
+        "id": "294:10678",
+        "boundVariables": {},
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      }
+    ]
+  },
+  {
+    "name": "Inventory navbar",
+    "id": "294:11575",
+    "variants": [
+      {
+        "name": "type=new",
+        "id": "294:11574",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      },
+      {
+        "name": "type=active",
+        "id": "294:11573",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      },
+      {
+        "name": "type=delivered",
+        "id": "294:11572",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      },
+      {
+        "name": "type=cancelled",
+        "id": "294:11571",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:37:46964"
+            }
+          ]
+        },
+        "fills": [
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          }
+        ],
+        "strokes": [],
+        "padding": {},
+        "itemSpacing": 8
+      }
+    ]
+  }
+]

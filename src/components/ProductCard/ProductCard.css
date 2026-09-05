@@ -1,0 +1,284 @@
+/* CSS Styles for Product Card Component (Node 106:9050) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+.uedp-productcard {
+  box-sizing: border-box;
+  width: 126px;
+  min-height: 276px;
+  background-color: var(--uedp-white, #ffffff);
+  border: 1.5px solid var(--uedp-slate-100, #f1f5f9);
+  border-radius: 12px;
+  padding: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--uedp-slate-800, #1e293b);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 3px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.uedp-productcard:hover {
+  box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.uedp-productcard-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 110px;
+  flex: 1;
+}
+
+/* Product Image Frame 1984079131 (110px x 110px) */
+.uedp-productcard-img-container {
+  box-sizing: border-box;
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  background-color: var(--uedp-slate-50, #f8fafc);
+  border: 1px solid var(--uedp-slate-100, #f1f5f9);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uedp-productcard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Low Stock Banner Stacked at Bottom of Image Frame */
+.uedp-productcard-lowstock-banner {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 110px;
+  height: 28px;
+  background-color: var(--uedp-amber-50, #fffbeb);
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.uedp-productcard-caution-icon {
+  flex-shrink: 0;
+}
+
+.uedp-productcard-lowstock-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--uedp-amber-700, #b45309);
+  white-space: nowrap;
+}
+
+/* Product Info Section Frame 1984079135 (110px x 140px) */
+.uedp-productcard-info {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 110px;
+  flex: 1;
+  gap: 16px;
+}
+
+.uedp-productcard-text-block {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 110px;
+}
+
+.uedp-productcard-title-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 110px;
+}
+
+.uedp-productcard-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--uedp-slate-800, #1e293b);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.uedp-productcard-desc {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--uedp-slate-500, #64748b);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Price Row Frame 1984079635 */
+.uedp-productcard-price-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 9px;
+  width: 110px;
+}
+
+.uedp-productcard-price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--uedp-emerald-700, #15803d);
+}
+
+.uedp-productcard-mrp {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--uedp-slate-500, #64748b);
+  text-decoration: line-through;
+}
+
+/* Inactive Typography */
+.uedp-productcard--inactive .uedp-productcard-title,
+.uedp-productcard--inactive .uedp-productcard-desc,
+.uedp-productcard--inactive .uedp-productcard-price,
+.uedp-productcard--inactive .uedp-productcard-mrp {
+  color: var(--uedp-slate-400, #94a3b8);
+}
+
+/* Action / Quantity Control Pill Button (110px x 36px) */
+.uedp-productcard-pill {
+  box-sizing: border-box;
+  width: 110px;
+  height: 36px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Add Button State */
+.uedp-productcard-pill--add {
+  background-color: var(--uedp-blue-50, #edf6ff);
+  cursor: pointer;
+}
+
+.uedp-productcard-pill--add:hover {
+  background-color: #dceefe;
+}
+
+.uedp-productcard-pill-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--uedp-blue-600, #256fb7);
+}
+
+/* Active Quantity Control Pill (State = Added) */
+.uedp-productcard-pill--active {
+  background-color: var(--uedp-blue-700, #2262a0);
+  padding: 6px;
+  justify-content: space-between;
+}
+
+.uedp-productcard-qty-btn {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--uedp-slate-50, #f8fafc);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.uedp-productcard-qty-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.uedp-productcard-qty-val {
+  box-sizing: border-box;
+  width: 38px;
+  height: 22px;
+  border-radius: 3px;
+  border: 1px solid var(--uedp-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uedp-productcard-qty-val span {
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--uedp-white, #ffffff);
+}
+
+/* Edit Variant Quantity Pill Styling (State = Edit) */
+.uedp-productcard-pill--edit .uedp-productcard-qty-btn {
+  background-color: var(--uedp-white, #ffffff);
+}
+
+.uedp-productcard-pill--edit .uedp-productcard-qty-val {
+  width: 41px;
+  height: 24px;
+  background-color: var(--uedp-white, #ffffff);
+  border: none;
+}
+
+.uedp-productcard-pill--edit .uedp-productcard-qty-val span {
+  color: var(--uedp-blue-600, #256fb7);
+}
+
+/* Inactive Pill State */
+.uedp-productcard-pill--inactive {
+  background-color: var(--uedp-slate-50, #f8fafc);
+  cursor: not-allowed;
+}
+
+.uedp-productcard-pill--inactive .uedp-productcard-pill-text {
+  color: var(--uedp-slate-400, #94a3b8);
+}
