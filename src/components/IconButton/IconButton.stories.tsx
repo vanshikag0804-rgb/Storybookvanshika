@@ -26,10 +26,14 @@ const meta: Meta<typeof IconButton> = {
       options: ['Default', 'Pressed', 'Disabled'],
       description: 'Figma Variant Property: State',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: '#F1F5F9', borderRadius: '12px' }}>
+    (Story, context) => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: context.globals.backgrounds?.value === '#0F172A' || context.args?.darkMode ? '#0F172A' : '#F1F5F9', borderRadius: '12px' }}>
         <Story />
       </div>
     ),
@@ -57,15 +61,26 @@ export const Disabled: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
   parameters: {
     controls: { exclude: ['State'] },
   },
-  render: () => (
+  render: (args) => (
     <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-      <IconButton State="Default" />
-      <IconButton State="Pressed" />
-      <IconButton State="Disabled" />
+      <IconButton {...args} State="Default" />
+      <IconButton {...args} State="Pressed" />
+      <IconButton {...args} State="Disabled" />
     </div>
   ),
 };
+

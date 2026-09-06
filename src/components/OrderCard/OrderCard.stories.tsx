@@ -31,10 +31,11 @@ const meta: Meta<typeof OrderCard> = {
     amount: { control: 'text', description: 'Total amount' },
     address: { control: 'text', description: 'Delivery address' },
     deliveryType: { control: 'select', options: ['myhub', 'self'], description: 'Delivery Badge' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: '#F1F5F9', minHeight: '400px' }}>
+    (Story, context) => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: context.globals.backgrounds?.value === '#0F172A' || context.args?.darkMode ? '#0F172A' : '#F1F5F9', minHeight: '400px' }}>
         <Story />
       </div>
     ),
@@ -88,17 +89,33 @@ export const Cancelled: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'active',
+    orderId: 'Order #123457',
+    itemsCount: '2 Items',
+    amount: '₹8,500',
+    address: 'Plot 42, Jubilee Hills, Hyderabad, Telangana – 500033',
+    deliveryType: 'self',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
   parameters: {
     controls: { exclude: ['State'] },
   },
-  render: () => (
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%', maxWidth: '405px' }}>
-      <OrderCard State="new" />
-      <OrderCard State="active" />
-      <OrderCard State="completed" />
-      <OrderCard State="cancelled" />
+      <OrderCard {...args} State="new" />
+      <OrderCard {...args} State="active" />
+      <OrderCard {...args} State="completed" />
+      <OrderCard {...args} State="cancelled" />
     </div>
   ),
 };
+
 

@@ -34,6 +34,10 @@ const meta: Meta<typeof SearchField> = {
       control: 'text',
       description: 'Input Value Text',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -68,22 +72,35 @@ export const DisabledState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    placeholder: 'Search or Scan',
+    darkMode: true,
+  },
+};
+
 export const Interactive: Story = {
-  render: () => {
+  render: (args) => {
     const [query, setQuery] = useState('');
+    const isDark = args.darkMode;
     return (
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '12px',
-          backgroundColor: '#F8FAFC',
+          backgroundColor: isDark ? '#0F172A' : '#F8FAFC',
           padding: '24px',
           borderRadius: '16px',
           maxWidth: '360px',
         }}
       >
         <SearchField
+          {...args}
           State="Default"
           placeholder="Search items, categories or scan..."
           value={query}
@@ -91,7 +108,7 @@ export const Interactive: Story = {
           onScanClick={() => alert('Camera scanner opened!')}
         />
         {query && (
-          <p style={{ margin: 0, fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#475569' }}>
+          <p style={{ margin: 0, fontFamily: 'Inter, sans-serif', fontSize: '13px', color: isDark ? '#94A3B8' : '#475569' }}>
             Searching for: <strong>"{query}"</strong>
           </p>
         )}
@@ -101,42 +118,45 @@ export const Interactive: Story = {
 };
 
 export const AllStates: Story = {
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '24px',
-        backgroundColor: '#F8FAFC',
-        padding: '24px',
-        borderRadius: '16px',
-        maxWidth: '360px',
-      }}
-    >
-      <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = Default
-        </h4>
-        <SearchField State="Default" />
+  render: (args) => {
+    const isDark = args.darkMode;
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          backgroundColor: isDark ? '#0F172A' : '#F8FAFC',
+          padding: '24px',
+          borderRadius: '16px',
+          maxWidth: '360px',
+        }}
+      >
+        <div>
+          <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = Default
+          </h4>
+          <SearchField {...args} State="Default" />
+        </div>
+        <div>
+          <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = Focused
+          </h4>
+          <SearchField {...args} State="Focused" />
+        </div>
+        <div>
+          <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = Filled
+          </h4>
+          <SearchField {...args} State="Filled" />
+        </div>
+        <div>
+          <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = Disabled
+          </h4>
+          <SearchField {...args} State="Disabled" />
+        </div>
       </div>
-      <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = Focused (Blue #8BC5F9 Border)
-        </h4>
-        <SearchField State="Focused" />
-      </div>
-      <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = Filled
-        </h4>
-        <SearchField State="Filled" />
-      </div>
-      <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = Disabled
-        </h4>
-        <SearchField State="Disabled" />
-      </div>
-    </div>
-  ),
+    );
+  },
 };

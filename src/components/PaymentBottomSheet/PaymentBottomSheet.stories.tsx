@@ -32,6 +32,7 @@ const meta: Meta<typeof PaymentBottomSheet> = {
     discount: { control: 'text', description: 'Discount Amount' },
     primaryAmount: { control: 'text', description: 'Method Amount' },
     cashIfAny: { control: 'text', description: 'Additional Cash' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
 };
 
@@ -79,21 +80,38 @@ export const CashMode: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'UPI',
+    mobileNumber: '9876543210',
+    customerName: 'Aarav Sharma',
+    totalBill: 'Rs.2498.00',
+    discount: '100.00',
+    primaryAmount: '2398.00',
+    cashIfAny: '0.00',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', backgroundColor: '#F8FAFC', padding: '24px', borderRadius: '16px' }}>
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC', padding: '24px', borderRadius: '16px' }}>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569' }}>State = UPI</h4>
-        <PaymentBottomSheet State="UPI" />
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569' }}>State = UPI</h4>
+        <PaymentBottomSheet {...args} State="UPI" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569' }}>State = Card</h4>
-        <PaymentBottomSheet State="Card" />
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569' }}>State = Card</h4>
+        <PaymentBottomSheet {...args} State="Card" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569' }}>State = Cash</h4>
-        <PaymentBottomSheet State="Cash" />
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569' }}>State = Cash</h4>
+        <PaymentBottomSheet {...args} State="Cash" />
       </div>
     </div>
   ),
 };
+

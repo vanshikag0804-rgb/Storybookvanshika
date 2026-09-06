@@ -10,6 +10,8 @@ export interface SearchFieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   style?: React.CSSProperties;
+  /** Dark mode state */
+  darkMode?: boolean;
   [key: string]: any;
 }
 
@@ -25,6 +27,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   onChange,
   className = '',
   style,
+  darkMode = false,
   ...props
 }) => {
   const [internalVal, setInternalVal] = useState(
@@ -51,12 +54,14 @@ export const SearchField: React.FC<SearchFieldProps> = ({
     : 'default';
 
   const iconStroke = isDisabled
-    ? '#94A3B8'
+    ? darkMode ? '#64748B' : '#94A3B8'
     : effectiveState === 'focused'
-    ? '#3488DC'
-    : '#475569';
+    ? darkMode ? '#60A5FA' : '#3488DC'
+    : darkMode ? '#94A3B8' : '#475569';
 
-  const scanIconStroke = isDisabled ? '#94A3B8' : '#475569';
+  const scanIconStroke = isDisabled
+    ? darkMode ? '#64748B' : '#94A3B8'
+    : darkMode ? '#94A3B8' : '#475569';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isDisabled) return;
@@ -66,7 +71,8 @@ export const SearchField: React.FC<SearchFieldProps> = ({
 
   return (
     <div
-      className={`uedp-searchfield uedp-searchfield--${effectiveState} ${className}`}
+      className={`uedp-searchfield uedp-searchfield--${effectiveState} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       {...props}
     >
@@ -78,6 +84,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
         <circle cx="11" cy="11" r="7" stroke={iconStroke} strokeWidth="1.5" />
         <path d="M16 16L20 20" stroke={iconStroke} strokeWidth="1.5" strokeLinecap="round" />
@@ -90,6 +97,8 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         placeholder={placeholder}
         value={internalVal}
         disabled={isDisabled}
+        aria-disabled={isDisabled}
+        aria-label={placeholder || 'Search field'}
         onChange={handleChange}
         onFocus={() => !isDisabled && setIsFocused(true)}
         onBlur={() => !isDisabled && setIsFocused(State === 'Focused')}
@@ -101,7 +110,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         className="uedp-searchfield-scan-btn"
         onClick={onScanClick}
         disabled={isDisabled}
-        aria-label="Scan item"
+        aria-label="Scan item barcode"
       >
         <svg
           width="24"
@@ -109,6 +118,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M4 8V6C4 4.89543 4.89543 4 6 4H8"

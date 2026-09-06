@@ -107,3 +107,76 @@
 .uedp-searchfield-scan-btn:disabled {
   cursor: not-allowed;
 }
+
+/* ==========================================================================
+   Dark Mode Overrides
+   ========================================================================== */
+
+.uedp-searchfield.uedp-dark,
+[data-theme='dark'] .uedp-searchfield {
+  background-color: #1E293B;
+  color: #F8FAFC;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--default,
+[data-theme='dark'] .uedp-searchfield--default {
+  background-color: #1E293B;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--default:hover,
+[data-theme='dark'] .uedp-searchfield--default:hover {
+  background-color: #334155;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--focused,
+[data-theme='dark'] .uedp-searchfield--focused {
+  background-color: #1E293B;
+  border-color: #60A5FA;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--filled,
+[data-theme='dark'] .uedp-searchfield--filled {
+  background-color: #334155;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--disabled,
+[data-theme='dark'] .uedp-searchfield--disabled {
+  background-color: #0F172A;
+}
+
+.uedp-searchfield.uedp-dark .uedp-searchfield-input,
+[data-theme='dark'] .uedp-searchfield-input {
+  color: #F8FAFC;
+}
+
+.uedp-searchfield.uedp-dark .uedp-searchfield-input::placeholder,
+[data-theme='dark'] .uedp-searchfield-input::placeholder {
+  color: #94A3B8;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--disabled .uedp-searchfield-input,
+[data-theme='dark'] .uedp-searchfield--disabled .uedp-searchfield-input {
+  color: #64748B;
+}
+
+.uedp-searchfield.uedp-dark.uedp-searchfield--disabled .uedp-searchfield-input::placeholder,
+[data-theme='dark'] .uedp-searchfield--disabled .uedp-searchfield-input::placeholder {
+  color: #64748B;
+}
+
+.uedp-searchfield:focus-within,
+.uedp-searchfield-scan-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-searchfield.uedp-dark:focus-within,
+[data-theme='dark'] .uedp-searchfield:focus-within,
+.uedp-searchfield.uedp-dark .uedp-searchfield-scan-btn:focus-visible,
+[data-theme='dark'] .uedp-searchfield-scan-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

@@ -7,6 +7,8 @@ export interface CTAProps {
   State?: 'Default' | 'Loading' | 'Disabled' | 'Pressed';
   /** Figma variant parameter: type */
   type?: 'Primary' | 'Secondary';
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
@@ -15,6 +17,7 @@ export interface CTAProps {
 export const CTA: React.FC<CTAProps> = ({
   State = 'Default',
   type = 'Primary',
+  darkMode = false,
   children = 'Add to Cart',
   className = '',
   onClick,
@@ -27,12 +30,15 @@ export const CTA: React.FC<CTAProps> = ({
 
   return (
     <button
-      className={`uedp-cta uedp-cta--${type.toLowerCase()} uedp-cta--${State.toLowerCase()} ${className}`}
+      className={`uedp-cta uedp-cta--${type.toLowerCase()} uedp-cta--${State.toLowerCase()} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
+      aria-busy={isLoading}
       onClick={onClick}
       {...props}
     >
-      {isLoading && <Loader2 className="uedp-cta-spinner" size={16} />}
+      {isLoading && <Loader2 className="uedp-cta-spinner" size={16} aria-hidden="true" />}
       <span>{children}</span>
     </button>
   );

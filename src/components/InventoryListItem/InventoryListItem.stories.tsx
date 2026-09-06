@@ -33,10 +33,11 @@ const meta: Meta<typeof InventoryListItem> = {
     stock: { control: 'number', description: 'Available Stock Quantity' },
     price: { control: 'text', description: 'Selling Price' },
     originalPrice: { control: 'text', description: 'Original MRP' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: '#FFFFFF', minHeight: '200px' }}>
+    (Story, context) => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: context.globals.backgrounds?.value === '#0F172A' || context.args?.darkMode ? '#0F172A' : '#FFFFFF', minHeight: '200px' }}>
         <Story />
       </div>
     ),
@@ -98,17 +99,35 @@ export const Inactive: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    Status: 'Default',
+    title: 'CoCo Chanel',
+    brand: 'Boss',
+    category: 'Electronics',
+    variantText: '50 ml',
+    stock: 87,
+    price: '₹8,500',
+    originalPrice: '₹21,000',
+    darkMode: true,
+  },
+};
+
 export const AllStatuses: Story = {
   parameters: {
     controls: { exclude: ['Status'] },
   },
-  render: () => (
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '398px' }}>
-      <InventoryListItem Status="Default" />
-      <InventoryListItem Status="Low Stock" stock={5} />
-      <InventoryListItem Status="Out of Stock" stock={0} />
-      <InventoryListItem Status="Inactive" />
+      <InventoryListItem {...args} Status="Default" />
+      <InventoryListItem {...args} Status="Low Stock" stock={5} />
+      <InventoryListItem {...args} Status="Out of Stock" stock={0} />
+      <InventoryListItem {...args} Status="Inactive" />
     </div>
   ),
 };
+
 

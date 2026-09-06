@@ -256,3 +256,72 @@
   background-color: var(--uedp-blue-700, #2262a0);
   color: var(--uedp-blue-50, #eff7fe);
 }
+
+/* Dark Mode State */
+.uedp-paymentbottomsheet.uedp-dark,
+[data-theme='dark'] .uedp-paymentbottomsheet {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  box-shadow: 0px -4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-title,
+[data-theme='dark'] .uedp-paymentbottomsheet-title,
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-label,
+[data-theme='dark'] .uedp-paymentbottomsheet-label {
+  color: #F8FAFC;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-input-wrapper,
+[data-theme='dark'] .uedp-paymentbottomsheet-input-wrapper {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-input,
+[data-theme='dark'] .uedp-paymentbottomsheet-input {
+  color: #F8FAFC;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-input::placeholder,
+[data-theme='dark'] .uedp-paymentbottomsheet-input::placeholder {
+  color: #64748B;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-info-text,
+[data-theme='dark'] .uedp-paymentbottomsheet-info-text {
+  color: #94A3B8;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-tab,
+[data-theme='dark'] .uedp-paymentbottomsheet-tab {
+  background-color: #1E293B;
+  color: #60A5FA;
+  border-color: #334155;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-tab--active,
+[data-theme='dark'] .uedp-paymentbottomsheet-tab--active {
+  background-color: var(--uedp-blue-600, #2563EB);
+  color: #FFFFFF;
+  border-color: var(--uedp-blue-600, #2563EB);
+}
+
+.uedp-paymentbottomsheet-tab:focus-visible,
+.uedp-paymentbottomsheet-input:focus-visible,
+.uedp-paymentbottomsheet-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-tab:focus-visible,
+[data-theme='dark'] .uedp-paymentbottomsheet-tab:focus-visible,
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-input:focus-visible,
+[data-theme='dark'] .uedp-paymentbottomsheet-input:focus-visible,
+.uedp-paymentbottomsheet.uedp-dark .uedp-paymentbottomsheet-btn:focus-visible,
+[data-theme='dark'] .uedp-paymentbottomsheet-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

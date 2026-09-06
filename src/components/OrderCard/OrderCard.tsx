@@ -13,6 +13,8 @@ export interface OrderCardProps {
   amount?: string;
   address?: string;
   deliveryType?: 'myhub' | 'self';
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
   className?: string;
@@ -32,6 +34,7 @@ export const OrderCard: React.FC<OrderCardProps> = ({
   amount = '₹1,250',
   address = 'Flat No. 203, Sri Venkateswara Residency, Madhapur, Hyderabad, Telangana – 500081',
   deliveryType = 'myhub',
+  darkMode = false,
   onPrimaryClick,
   onSecondaryClick,
   className = '',
@@ -71,11 +74,25 @@ export const OrderCard: React.FC<OrderCardProps> = ({
     }
   };
 
+  const isInteractive = Boolean(onClick);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (onClick && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <div
-      className={`uedp-ordercard uedp-ordercard--${stateClass} ${className}`}
+      className={`uedp-ordercard uedp-ordercard--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       onClick={onClick}
+      role={isInteractive ? 'button' : 'region'}
+      tabIndex={isInteractive ? 0 : undefined}
+      onKeyDown={isInteractive ? handleKeyDown : undefined}
+      aria-label={`Order summary ${orderId}, ${itemsCount}, total ${amount}`}
       {...props}
     >
       <div className="uedp-ordercard-header">
@@ -85,30 +102,41 @@ export const OrderCard: React.FC<OrderCardProps> = ({
         </div>
         <div className="uedp-ordercard-header-sub">
           <span className="uedp-ordercard-items">{itemsCount}</span>
-          <button type="button" className="uedp-ordercard-icon-btn" aria-label="Call customer">
-            <Phone size={16} />
+          <button
+            type="button"
+            className="uedp-ordercard-icon-btn"
+            aria-label={`Call customer for ${orderId}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Phone size={16} aria-hidden="true" />
           </button>
         </div>
       </div>
 
       <div className="uedp-ordercard-address-block">
         <span className="uedp-ordercard-address">{address}</span>
-        <button type="button" className="uedp-ordercard-map-btn" aria-label="View map">
-          <MapPin size={20} className="uedp-ordercard-map-icon" />
+        <button
+          type="button"
+          className="uedp-ordercard-map-btn"
+          aria-label={`View delivery map for ${orderId}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <MapPin size={20} className="uedp-ordercard-map-icon" aria-hidden="true" />
         </button>
       </div>
 
       <div className="uedp-ordercard-badge-row">
-        <BadgesWithIcon State={deliveryType === 'myhub' ? 'myhub delivery' : 'self delivery'} />
+        <BadgesWithIcon darkMode={darkMode} State={deliveryType === 'myhub' ? 'myhub delivery' : 'self delivery'} />
       </div>
 
       <div className="uedp-ordercard-tracking-row">
-        <OrderTracking Status={getTrackingStatus()} />
+        <OrderTracking darkMode={darkMode} Status={getTrackingStatus()} />
       </div>
 
       <div className="uedp-ordercard-actions">
         <CTA
           type="Secondary"
+          darkMode={darkMode}
           onClick={onSecondaryClick}
           className="uedp-ordercard-secondary-btn"
         >
@@ -116,6 +144,7 @@ export const OrderCard: React.FC<OrderCardProps> = ({
         </CTA>
         <CTA
           type="Primary"
+          darkMode={darkMode}
           onClick={onPrimaryClick}
           className="uedp-ordercard-primary-btn"
         >
@@ -125,4 +154,5 @@ export const OrderCard: React.FC<OrderCardProps> = ({
     </div>
   );
 };
+
 

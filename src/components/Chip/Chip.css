@@ -41,3 +41,35 @@
 .uedp-chip-label {
   display: inline-block;
 }
+
+/* Dark Mode State */
+.uedp-chip.uedp-dark.uedp-chip--default,
+[data-theme='dark'] .uedp-chip--default {
+  background-color: #334155;
+  color: #F8FAFC;
+}
+
+.uedp-chip.uedp-dark.uedp-chip--selected,
+[data-theme='dark'] .uedp-chip--selected {
+  background-color: var(--uedp-blue-600, #3488DC);
+  color: #FFFFFF;
+}
+
+.uedp-chip.uedp-dark.uedp-chip--disabled,
+[data-theme='dark'] .uedp-chip--disabled {
+  background-color: #1E293B;
+  color: #64748B;
+}
+
+.uedp-chip:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-chip.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-chip:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

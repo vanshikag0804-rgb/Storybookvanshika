@@ -30,6 +30,10 @@ const meta: Meta<typeof RevenueGraph> = {
       control: 'text',
       description: 'Custom Title Override',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -60,43 +64,54 @@ export const Range1Y: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    Range: '7D',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
         gap: '32px',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
         maxWidth: '450px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           Range = 7D
         </h4>
-        <RevenueGraph Range="7D" />
+        <RevenueGraph {...args} Range="7D" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           Range = 30D
         </h4>
-        <RevenueGraph Range="30D" />
+        <RevenueGraph {...args} Range="30D" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           Range = 90D
         </h4>
-        <RevenueGraph Range="90D" />
+        <RevenueGraph {...args} Range="90D" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           Range = 1Y
         </h4>
-        <RevenueGraph Range="1Y" />
+        <RevenueGraph {...args} Range="1Y" />
       </div>
     </div>
   ),
 };
+

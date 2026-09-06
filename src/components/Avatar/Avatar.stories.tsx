@@ -28,10 +28,14 @@ const meta: Meta<typeof Avatar> = {
       control: { type: 'range', min: 24, max: 96, step: 4 },
       description: 'Avatar diameter in pixels',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: '#FFFFFF' }}>
+    (Story, context) => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: context.globals.backgrounds?.value === '#0F172A' || context.args?.darkMode ? '#0F172A' : '#FFFFFF' }}>
         <Story />
       </div>
     ),
@@ -48,10 +52,26 @@ export const Default: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    size: 40,
+    darkMode: true,
+  },
+};
+
 export const VariousSizes: Story = {
+  args: {
+    darkMode: false
+  },
+
   parameters: {
     controls: { exclude: ['size'] },
   },
+
   render: (args) => (
     <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '16px' }}>
       <Avatar {...args} size={28} />
@@ -59,5 +79,6 @@ export const VariousSizes: Story = {
       <Avatar {...args} size={56} />
       <Avatar {...args} size={72} />
     </div>
-  ),
+  )
 };
+

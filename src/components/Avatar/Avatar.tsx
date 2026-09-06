@@ -10,6 +10,8 @@ export interface AvatarProps {
   src?: string;
   /** Alt text if image is used */
   alt?: string;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -25,6 +27,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   size = 40,
   src,
   alt = 'User Avatar',
+  darkMode = false,
   className = '',
   style,
   onClick,
@@ -37,11 +40,25 @@ export const Avatar: React.FC<AvatarProps> = ({
     ...style,
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (onClick && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
+  const isInteractive = Boolean(onClick);
+
   return (
     <div
-      className={`uedp-avatar uedp-avatar--${String(State).toLowerCase()} ${className}`}
+      className={`uedp-avatar uedp-avatar--${String(State).toLowerCase()} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={customStyle}
       onClick={onClick}
+      role={isInteractive ? 'button' : 'img'}
+      tabIndex={isInteractive ? 0 : undefined}
+      onKeyDown={isInteractive ? handleKeyDown : undefined}
+      aria-label={alt || 'User Avatar'}
       {...props}
     >
       {src ? (
@@ -52,6 +69,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           {/* Head Vector - Figma Node 85:93 */}
           <circle cx="12" cy="7" r="4" fill="#3488DC" stroke="#3488DC" strokeWidth="1.5" />

@@ -31,3 +31,34 @@
   color: var(--uedp-blue-600, #2563EB);
   font-weight: 600;
 }
+
+/* Dark Mode State */
+.uedp-navbar.uedp-dark,
+[data-theme='dark'] .uedp-navbar {
+  background-color: #0F172A;
+  border-top-color: #334155;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.uedp-navbar.uedp-dark .uedp-navbar-item,
+[data-theme='dark'] .uedp-navbar .uedp-navbar-item {
+  color: #94A3B8;
+}
+
+.uedp-navbar.uedp-dark .uedp-navbar-item--active,
+[data-theme='dark'] .uedp-navbar .uedp-navbar-item--active {
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-navbar-item:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-navbar.uedp-dark .uedp-navbar-item:focus-visible,
+[data-theme='dark'] .uedp-navbar .uedp-navbar-item:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

@@ -213,3 +213,51 @@
   padding-top: 1px;
 }
 
+/* Dark Mode State */
+.uedp-ordertracking.uedp-dark.uedp-ordertracking--default,
+.uedp-ordertracking.uedp-dark.uedp-ordertracking--opend,
+[data-theme='dark'] .uedp-ordertracking--default,
+[data-theme='dark'] .uedp-ordertracking--opend {
+  background-color: #1E293B;
+  border: 1px solid #334155;
+}
+
+.uedp-ordertracking.uedp-dark.uedp-ordertracking--delivered,
+[data-theme='dark'] .uedp-ordertracking--delivered {
+  background-color: rgba(22, 163, 74, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.uedp-ordertracking.uedp-dark.uedp-ordertracking--cancelled,
+[data-theme='dark'] .uedp-ordertracking--cancelled {
+  background-color: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.uedp-ordertracking.uedp-dark .uedp-ordertracking-collapsed-title,
+[data-theme='dark'] .uedp-ordertracking--default .uedp-ordertracking-collapsed-title,
+.uedp-ordertracking.uedp-dark .uedp-ordertracking-step-label,
+[data-theme='dark'] .uedp-ordertracking .uedp-ordertracking-step-label {
+  color: #F8FAFC;
+}
+
+.uedp-ordertracking-header:focus-visible,
+.uedp-ordertracking-collapsed:focus-visible,
+.uedp-ordertracking-toggle-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.uedp-ordertracking.uedp-dark .uedp-ordertracking-header:focus-visible,
+[data-theme='dark'] .uedp-ordertracking-header:focus-visible,
+.uedp-ordertracking.uedp-dark .uedp-ordertracking-collapsed:focus-visible,
+[data-theme='dark'] .uedp-ordertracking-collapsed:focus-visible,
+.uedp-ordertracking.uedp-dark .uedp-ordertracking-toggle-btn:focus-visible,
+[data-theme='dark'] .uedp-ordertracking-toggle-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+
+

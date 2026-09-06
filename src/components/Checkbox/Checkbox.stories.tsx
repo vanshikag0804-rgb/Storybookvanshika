@@ -29,6 +29,10 @@ const meta: Meta<typeof Checkbox> = {
       control: 'text',
       description: 'Optional checkbox label',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -56,15 +60,27 @@ export const Disabled: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Checked',
+    label: 'Accept terms and conditions',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
   parameters: {
     controls: { exclude: ['State', 'label'] },
   },
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'flex-start', padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px' }}>
-      <Checkbox State="Unchecked" label="Unchecked State" />
-      <Checkbox State="Checked" label="Checked State" />
-      <Checkbox State="Disabled" label="Disabled State" />
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'flex-start', padding: '24px', backgroundColor: args.darkMode ? '#0F172A' : '#FFFFFF', borderRadius: '12px' }}>
+      <Checkbox {...args} State="Unchecked" label="Unchecked State" />
+      <Checkbox {...args} State="Checked" label="Checked State" />
+      <Checkbox {...args} State="Disabled" label="Disabled State" />
     </div>
   ),
 };
+

@@ -129,3 +129,42 @@
   line-height: 24px;
   color: var(--uedp-slate-400, #94a3b8);
 }
+
+/* Dark Mode State */
+.uedp-quantitycontrol.uedp-dark.uedp-quantitycontrol--add,
+[data-theme='dark'] .uedp-quantitycontrol--add {
+  background-color: #334155;
+}
+
+.uedp-quantitycontrol.uedp-dark .uedp-quantitycontrol-add-btn,
+[data-theme='dark'] .uedp-quantitycontrol-add-btn {
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-quantitycontrol.uedp-dark.uedp-quantitycontrol--inactive,
+.uedp-quantitycontrol.uedp-dark.uedp-quantitycontrol--ineactive,
+[data-theme='dark'] .uedp-quantitycontrol--inactive,
+[data-theme='dark'] .uedp-quantitycontrol--ineactive {
+  background-color: #1E293B;
+}
+
+.uedp-quantitycontrol.uedp-dark .uedp-quantitycontrol-label,
+[data-theme='dark'] .uedp-quantitycontrol-label {
+  color: #64748B;
+}
+
+.uedp-quantitycontrol-add-btn:focus-visible,
+.uedp-quantitycontrol-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-quantitycontrol.uedp-dark .uedp-quantitycontrol-add-btn:focus-visible,
+[data-theme='dark'] .uedp-quantitycontrol-add-btn:focus-visible,
+.uedp-quantitycontrol.uedp-dark .uedp-quantitycontrol-btn:focus-visible,
+[data-theme='dark'] .uedp-quantitycontrol-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

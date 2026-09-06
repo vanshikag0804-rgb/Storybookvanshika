@@ -12,6 +12,8 @@ export interface OrderTrackingProps {
   Status?: 'Default' | 'delivered' | 'cancelled' | 'opend';
   title?: string;
   steps?: TimelineStep[];
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -34,6 +36,7 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
   Status = 'Default',
   title,
   steps = DEFAULT_TIMELINE_STEPS,
+  darkMode = false,
   className = '',
   style,
   onClick,
@@ -58,21 +61,43 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
     return 'Driver Assigned';
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
+
   return (
     <div
-      className={`uedp-ordertracking uedp-ordertracking--${stateClass} ${className}`}
+      className={`uedp-ordertracking uedp-ordertracking--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
+      role="region"
+      aria-label="Order status tracking timeline"
       {...props}
     >
       {effectiveStatus === 'opend' ? (
         <div className="uedp-ordertracking-expanded">
-          <div className="uedp-ordertracking-header" onClick={handleToggle}>
-            <div className="uedp-ordertracking-timeline">
+          <div
+            className="uedp-ordertracking-header"
+            onClick={handleToggle}
+            role="button"
+            tabIndex={0}
+            aria-expanded={true}
+            aria-label="Collapse order tracking steps"
+            onKeyDown={handleKeyDown}
+          >
+            <ol className="uedp-ordertracking-timeline">
               {steps.map((step, idx) => {
                 const isLast = idx === steps.length - 1;
                 return (
-                  <div key={idx} className={`uedp-ordertracking-step uedp-ordertracking-step--${step.state}`}>
-                    <div className="uedp-ordertracking-step-indicator">
+                  <li
+                    key={idx}
+                    className={`uedp-ordertracking-step uedp-ordertracking-step--${step.state}`}
+                    aria-current={step.state === 'current' ? 'step' : undefined}
+                  >
+                    <div className="uedp-ordertracking-step-indicator" aria-hidden="true">
                       <div className="uedp-ordertracking-dot">
                         {step.state === 'completed' && <Check size={12} strokeWidth={3} className="uedp-ordertracking-check" />}
                         {step.state === 'current' && <div className="uedp-ordertracking-inner-dot" />}
@@ -80,25 +105,49 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
                       {!isLast && <div className="uedp-ordertracking-line" />}
                     </div>
                     <span className="uedp-ordertracking-step-label">{step.label}</span>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
-            <button type="button" className="uedp-ordertracking-toggle-btn" aria-label="Collapse">
-              <ChevronUp size={20} className="uedp-ordertracking-chevron" />
+            </ol>
+            <button
+              type="button"
+              className="uedp-ordertracking-toggle-btn"
+              aria-label="Collapse timeline"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggle();
+              }}
+            >
+              <ChevronUp size={20} className="uedp-ordertracking-chevron" aria-hidden="true" />
             </button>
           </div>
         </div>
       ) : (
-        <div className="uedp-ordertracking-collapsed" onClick={handleToggle}>
+        <div
+          className="uedp-ordertracking-collapsed"
+          onClick={handleToggle}
+          role="button"
+          tabIndex={0}
+          aria-expanded={false}
+          aria-label={`Expand order tracking steps. Status: ${getCollapsedTitle()}`}
+          onKeyDown={handleKeyDown}
+        >
           <div className="uedp-ordertracking-collapsed-left">
-            <div className="uedp-ordertracking-indicator-circle">
+            <div className="uedp-ordertracking-indicator-circle" aria-hidden="true">
               <div className="uedp-ordertracking-indicator-inner" />
             </div>
             <span className="uedp-ordertracking-collapsed-title">{getCollapsedTitle()}</span>
           </div>
-          <button type="button" className="uedp-ordertracking-toggle-btn" aria-label="Expand">
-            <ChevronDown size={20} className="uedp-ordertracking-chevron" />
+          <button
+            type="button"
+            className="uedp-ordertracking-toggle-btn"
+            aria-label="Expand timeline"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleToggle();
+            }}
+          >
+            <ChevronDown size={20} className="uedp-ordertracking-chevron" aria-hidden="true" />
           </button>
         </div>
       )}

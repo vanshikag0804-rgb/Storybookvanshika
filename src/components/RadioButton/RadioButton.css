@@ -65,3 +65,38 @@
   line-height: 20px;
   color: var(--uedp-slate-800, #1e293b);
 }
+
+/* Dark Mode State */
+.uedp-radiobutton-wrapper.uedp-dark,
+[data-theme='dark'] .uedp-radiobutton-wrapper {
+  color: #F8FAFC;
+}
+
+.uedp-radiobutton-wrapper.uedp-dark .uedp-radiobutton,
+[data-theme='dark'] .uedp-radiobutton {
+  background-color: #1E293B;
+  border-color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-radiobutton-wrapper.uedp-dark .uedp-radiobutton-label,
+[data-theme='dark'] .uedp-radiobutton-label {
+  color: #F8FAFC;
+}
+
+.uedp-radiobutton-wrapper.uedp-dark .uedp-radiobutton-dot,
+[data-theme='dark'] .uedp-radiobutton-dot {
+  background-color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-radiobutton:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-radiobutton-wrapper.uedp-dark .uedp-radiobutton:focus-visible,
+[data-theme='dark'] .uedp-radiobutton:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

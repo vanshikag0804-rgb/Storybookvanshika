@@ -29,3 +29,22 @@
 .uedp-progressbar--success .uedp-progressbar-fill {
   background-color: var(--uedp-emerald-600, #16a34a);
 }
+
+/* Dark Mode State */
+.uedp-progressbar.uedp-dark,
+[data-theme='dark'] .uedp-progressbar {
+  background-color: #334155;
+}
+
+.uedp-progressbar:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-progressbar.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-progressbar:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

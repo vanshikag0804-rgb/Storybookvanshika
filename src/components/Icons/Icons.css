@@ -52,3 +52,37 @@
   color: inherit;
 }
 
+/* Dark Mode State */
+.uedp-icons.uedp-dark,
+[data-theme='dark'] .uedp-icons {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  border: 1px solid #334155;
+}
+
+.uedp-icons.uedp-dark:hover:not(:disabled),
+[data-theme='dark'] .uedp-icons:hover:not(:disabled) {
+  background-color: #334155;
+  color: #FFFFFF;
+}
+
+.uedp-icons.uedp-dark.uedp-icons--disabled,
+[data-theme='dark'] .uedp-icons--disabled {
+  background-color: #0F172A;
+  color: #64748B;
+  border-color: transparent;
+}
+
+.uedp-icons:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-icons.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-icons:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+
+

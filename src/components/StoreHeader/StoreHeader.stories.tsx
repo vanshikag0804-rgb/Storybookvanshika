@@ -30,6 +30,10 @@ const meta: Meta<typeof StoreHeader> = {
       control: 'text',
       description: 'Store Name Label',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -40,6 +44,7 @@ export const Default: Story = {
   args: {
     State: 'Offline',
     storeName: 'MyHub Retailer #104',
+    darkMode: false
   },
 };
 
@@ -57,60 +62,84 @@ export const OnlineState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'online',
+    storeName: 'Fresh Mart Supermarket',
+    darkMode: true,
+  },
+};
+
 export const Interactive: Story = {
-  render: () => {
+  args: {
+    darkMode: false
+  },
+
+  render: (args) => {
     const [isOnline, setIsOnline] = useState(false);
+    const isDark = args.darkMode;
     return (
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '16px',
-          backgroundColor: '#F8FAFC',
+          backgroundColor: isDark ? '#0F172A' : '#F8FAFC',
           padding: '24px',
           borderRadius: '16px',
           maxWidth: '450px',
         }}
       >
         <StoreHeader
+          {...args}
           State={isOnline ? 'online' : 'Offline'}
           storeName="Apex Supermarket"
           onToggleState={setIsOnline}
           onSwitchStore={() => alert('Switch Store Modal Triggered')}
         />
-        <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: '#475569' }}>
-          Current Mode: <strong style={{ color: isOnline ? '#16A34A' : '#DC2626' }}>{isOnline ? 'Online (Accepting Orders)' : 'Offline (Store Closed)'}</strong>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '13px', color: isDark ? '#94A3B8' : '#475569' }}>
+          Current Mode: <strong style={{ color: isOnline ? '#4ADE80' : '#F87171' }}>{isOnline ? 'Online (Accepting Orders)' : 'Offline (Store Closed)'}</strong>
         </div>
       </div>
     );
-  },
+  }
 };
 
 export const AllStates: Story = {
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '24px',
-        backgroundColor: '#F8FAFC',
-        padding: '24px',
-        borderRadius: '16px',
-        maxWidth: '450px',
-      }}
-    >
-      <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = Offline
-        </h4>
-        <StoreHeader State="Offline" storeName="Store Name" />
+  args: {
+    darkMode: false
+  },
+
+  render: (args) => {
+    const isDark = args.darkMode;
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          backgroundColor: isDark ? '#0F172A' : '#F8FAFC',
+          padding: '24px',
+          borderRadius: '16px',
+          maxWidth: '450px',
+        }}
+      >
+        <div>
+          <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = Offline
+          </h4>
+          <StoreHeader {...args} State="Offline" storeName="Store Name" />
+        </div>
+        <div>
+          <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: isDark ? '#94A3B8' : '#475569', fontSize: '13px' }}>
+            State = online (Blue Active Toggle #3488DC)
+          </h4>
+          <StoreHeader {...args} State="online" storeName="Store Name" />
+        </div>
       </div>
-      <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
-          State = online (Blue Active Toggle #3488DC)
-        </h4>
-        <StoreHeader State="online" storeName="Store Name" />
-      </div>
-    </div>
-  ),
+    );
+  }
 };

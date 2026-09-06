@@ -7,6 +7,8 @@ export interface IconButtonProps {
   State?: 'Default' | 'Disabled' | 'Pressed';
   /** Optional icon override */
   icon?: React.ReactNode;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -20,6 +22,7 @@ export interface IconButtonProps {
 export const IconButton: React.FC<IconButtonProps> = ({
   State = 'Default',
   icon,
+  darkMode = false,
   className = '',
   style,
   onClick,
@@ -30,13 +33,17 @@ export const IconButton: React.FC<IconButtonProps> = ({
 
   return (
     <button
-      className={`uedp-iconbutton uedp-iconbutton--${stateClass} ${className}`}
+      className={`uedp-iconbutton uedp-iconbutton--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
+      aria-label={props['aria-label'] || props.ariaLabel || 'Action button'}
       onClick={onClick}
       {...props}
     >
-      {icon || <Plus size={24} strokeWidth={1.5} className="uedp-iconbutton-icon" />}
+      {icon || <Plus size={24} strokeWidth={1.5} className="uedp-iconbutton-icon" aria-hidden="true" />}
     </button>
   );
 };
+

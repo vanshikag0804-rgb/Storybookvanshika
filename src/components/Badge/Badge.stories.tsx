@@ -28,6 +28,10 @@ const meta: Meta<typeof Badge> = {
       control: 'text',
       description: 'Badge text label content',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -55,15 +59,32 @@ export const ErrorState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    label: 'Badge',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
+  args: {
+    darkMode: false
+  },
+
   parameters: {
     controls: { exclude: ['State', 'label'] },
   },
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start', padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px' }}>
-      <Badge State="Default" label="Badge" />
-      <Badge State="Success" label="Sucess" />
-      <Badge State="Error" label="Error" />
+
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'flex-start', padding: '24px', backgroundColor: args.darkMode ? '#0F172A' : '#FFFFFF', borderRadius: '12px' }}>
+      <Badge {...args} State="Default" label="Badge" />
+      <Badge {...args} State="Success" label="Sucess" />
+      <Badge {...args} State="Error" label="Error" />
     </div>
-  ),
+  )
 };
+

@@ -10,6 +10,8 @@ export interface ProductCardProps {
   originalPrice?: string;
   imageSrc?: string;
   quantity?: number;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onAdd?: () => void;
   onQuantityChange?: (newQty: number) => void;
   className?: string;
@@ -29,6 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   originalPrice = '₹220',
   imageSrc = '/assets/turmeric_powder.jpg',
   quantity = 1,
+  darkMode = false,
   onAdd,
   onQuantityChange,
   className = '',
@@ -80,7 +83,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div
-      className={`uedp-productcard ${variantClass} ${className}`}
+      className={`uedp-productcard ${variantClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       {...props}
     >
@@ -141,7 +145,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Action / Quantity Control Pill Button */}
           {isInactive ? (
-            <div className="uedp-productcard-pill uedp-productcard-pill--inactive">
+            <div className="uedp-productcard-pill uedp-productcard-pill--inactive" aria-disabled="true">
               <span className="uedp-productcard-pill-text">Inactive</span>
             </div>
           ) : showQuantityControls ? (
@@ -149,15 +153,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               className={`uedp-productcard-pill uedp-productcard-pill--active ${
                 isEditMode ? 'uedp-productcard-pill--edit' : ''
               }`}
+              role="group"
+              aria-label={`Quantity selector for ${title}`}
             >
               {/* Minus Button */}
               <button
                 type="button"
                 className="uedp-productcard-qty-btn"
                 onClick={handleDecrease}
-                aria-label="Decrease quantity"
+                aria-label={`Decrease quantity of ${title}`}
               >
-                <svg width="12" height="2" viewBox="0 0 12 2" fill="none">
+                <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true">
                   <path
                     d="M1 1H11"
                     stroke={isEditMode ? '#256FB7' : '#2262A0'}
@@ -168,7 +174,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               </button>
 
               {/* Quantity Value Box */}
-              <div className="uedp-productcard-qty-val">
+              <div className="uedp-productcard-qty-val" aria-live="polite" aria-label={`Current quantity ${internalQty}`}>
                 <span>{internalQty}</span>
               </div>
 
@@ -177,9 +183,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 type="button"
                 className="uedp-productcard-qty-btn"
                 onClick={handleIncrease}
-                aria-label="Increase quantity"
+                aria-label={`Increase quantity of ${title}`}
               >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path
                     d="M6 1V11M1 6H11"
                     stroke={isEditMode ? '#256FB7' : '#2262A0'}
@@ -194,6 +200,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               type="button"
               className="uedp-productcard-pill uedp-productcard-pill--add"
               onClick={handleAddClick}
+              aria-label={`Add ${title} to cart`}
             >
               <span className="uedp-productcard-pill-text">Add</span>
             </button>

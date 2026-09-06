@@ -33,3 +33,35 @@
   background-color: var(--uedp-red-50, #FEF2F2);
   color: var(--uedp-red-800, #991B1B);
 }
+
+/* Dark Mode State */
+.uedp-badge.uedp-dark.uedp-badge--default,
+[data-theme='dark'] .uedp-badge--default {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-badge.uedp-dark.uedp-badge--success,
+[data-theme='dark'] .uedp-badge--success {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.uedp-badge.uedp-dark.uedp-badge--error,
+[data-theme='dark'] .uedp-badge--error {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #f87171;
+}
+
+.uedp-badge:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-badge.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-badge:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

@@ -130,3 +130,52 @@
   flex: 1;
 }
 
+/* Dark Mode State */
+.uedp-ordercard.uedp-dark,
+[data-theme='dark'] .uedp-ordercard {
+  background-color: #1E293B;
+  border-color: #334155;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.uedp-ordercard.uedp-dark .uedp-ordercard-id,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-id,
+.uedp-ordercard.uedp-dark .uedp-ordercard-amount,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-amount {
+  color: #F8FAFC;
+}
+
+.uedp-ordercard.uedp-dark .uedp-ordercard-items,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-items,
+.uedp-ordercard.uedp-dark .uedp-ordercard-address,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-address {
+  color: #94A3B8;
+}
+
+.uedp-ordercard.uedp-dark .uedp-ordercard-icon-btn,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-icon-btn,
+.uedp-ordercard.uedp-dark .uedp-ordercard-map-btn,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-map-btn {
+  background-color: #334155;
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-ordercard:focus-visible,
+.uedp-ordercard-icon-btn:focus-visible,
+.uedp-ordercard-map-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-ordercard.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-ordercard:focus-visible,
+.uedp-ordercard.uedp-dark .uedp-ordercard-icon-btn:focus-visible,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-icon-btn:focus-visible,
+.uedp-ordercard.uedp-dark .uedp-ordercard-map-btn:focus-visible,
+[data-theme='dark'] .uedp-ordercard .uedp-ordercard-map-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+
+

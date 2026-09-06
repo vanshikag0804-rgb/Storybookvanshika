@@ -28,6 +28,10 @@ const meta: Meta<typeof BadgesWithIcon> = {
       control: 'text',
       description: 'Optional custom badge label',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -46,14 +50,30 @@ export const MyHubDelivery: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'self delivery',
+    darkMode: true,
+  },
+};
+
 export const AllVariants: Story = {
+  args: {
+    darkMode: false
+  },
+
   parameters: {
     controls: { exclude: ['State', 'label'] },
   },
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start', padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px' }}>
-      <BadgesWithIcon State="self delivery" />
-      <BadgesWithIcon State="myhub delivery" />
+
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start', padding: '24px', backgroundColor: args.darkMode ? '#0F172A' : '#FFFFFF', borderRadius: '12px' }}>
+      <BadgesWithIcon {...args} State="self delivery" />
+      <BadgesWithIcon {...args} State="myhub delivery" />
     </div>
-  ),
+  )
 };
+

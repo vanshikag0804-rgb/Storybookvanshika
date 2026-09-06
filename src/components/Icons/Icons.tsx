@@ -7,6 +7,8 @@ export interface IconsProps {
   State?: 'Default' | 'Disabled' | 'Pressed';
   /** Custom icon node override */
   icon?: React.ReactNode;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -20,6 +22,7 @@ export interface IconsProps {
 export const Icons: React.FC<IconsProps> = ({
   State = 'Default',
   icon,
+  darkMode = false,
   className = '',
   style,
   onClick,
@@ -30,14 +33,18 @@ export const Icons: React.FC<IconsProps> = ({
 
   return (
     <button
-      className={`uedp-icons uedp-icons--${stateClass} ${className}`}
+      className={`uedp-icons uedp-icons--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
+      aria-label={props['aria-label'] || props.ariaLabel || 'Search icon button'}
       onClick={onClick}
       {...props}
     >
-      {icon || <Search size={24} strokeWidth={1.5} className="uedp-icons-icon" />}
+      {icon || <Search size={24} strokeWidth={1.5} className="uedp-icons-icon" aria-hidden="true" />}
     </button>
   );
 };
+
 

@@ -35,6 +35,10 @@ const meta: Meta<typeof CTA> = {
       "Secondary"
     ],
     "description": "Figma Variant Property: type"
+  },
+  "darkMode": {
+    "control": "boolean",
+    "description": "Enable Dark Mode state"
   }
 },
 };
@@ -44,7 +48,19 @@ type Story = StoryObj<typeof CTA>;
 
 export const Default: Story = {
   args: {
-  "State": "Default",
-  "type": "Primary"
-},
+    State: "Default",
+    type: "Primary",
+  },
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    "State": "Default",
+    "type": "Primary",
+    "darkMode": true
+  },
+};
+

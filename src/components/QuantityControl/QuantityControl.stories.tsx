@@ -30,6 +30,10 @@ const meta: Meta<typeof QuantityControl> = {
       control: 'number',
       description: 'Quantity Value',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -62,42 +66,54 @@ export const InactiveState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    quantity: 2,
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         gap: '24px',
         flexWrap: 'wrap',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Add
         </h4>
-        <QuantityControl State="Add" />
+        <QuantityControl {...args} State="Add" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Default
         </h4>
-        <QuantityControl State="Default" quantity={1} />
+        <QuantityControl {...args} State="Default" quantity={1} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Focused
         </h4>
-        <QuantityControl State="Focused" quantity={1} />
+        <QuantityControl {...args} State="Focused" quantity={1} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Ineactive
         </h4>
-        <QuantityControl State="Ineactive" />
+        <QuantityControl {...args} State="Ineactive" />
       </div>
     </div>
   ),
 };
+

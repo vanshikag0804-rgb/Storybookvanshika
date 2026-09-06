@@ -6,6 +6,8 @@ export interface CheckboxProps {
   State?: 'Unchecked' | 'Disabled' | 'Checked';
   /** Optional label text accompanying the checkbox */
   label?: string;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
   className?: string;
@@ -21,6 +23,7 @@ export interface CheckboxProps {
 export const Checkbox: React.FC<CheckboxProps> = ({
   State = 'Unchecked',
   label,
+  darkMode = false,
   checked: controlledChecked,
   onChange,
   className = '',
@@ -53,18 +56,32 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <label
-      className={`uedp-checkbox uedp-checkbox--${currentState} ${className}`}
+      className={`uedp-checkbox uedp-checkbox--${currentState} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
-      onClick={handleClick}
       {...props}
     >
-      <div className="uedp-checkbox-box">
+      <input
+        type="checkbox"
+        className="uedp-checkbox-input"
+        checked={isChecked}
+        disabled={isDisabled}
+        onChange={(e) => {
+          if (isDisabled) return;
+          setIsChecked(e.target.checked);
+          onChange?.(e.target.checked);
+          onClick?.();
+        }}
+        aria-label={label || 'Checkbox'}
+      />
+      <div className="uedp-checkbox-box" aria-hidden="true">
         {isChecked && (
           <svg
             className="uedp-checkbox-check"
             viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M 3.5 8 L 6.5 11 L 12.5 4.5"

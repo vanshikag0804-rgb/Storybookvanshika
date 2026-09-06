@@ -29,6 +29,10 @@ const meta: Meta<typeof Chip> = {
       control: 'text',
       description: 'Chip text label content',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -56,15 +60,32 @@ export const Disabled: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Selected',
+    label: 'Grocery',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
+  args: {
+    darkMode: true
+  },
+
   parameters: {
     controls: { exclude: ['State', 'label'] },
   },
-  render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px' }}>
-      <Chip State="Default" label="Grocery" />
-      <Chip State="Selected" label="Grocery" />
-      <Chip State="Disabled" label="Grocery" />
+
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', padding: '24px', backgroundColor: args.darkMode ? '#0F172A' : '#FFFFFF', borderRadius: '12px' }}>
+      <Chip {...args} State="Default" label="Grocery" />
+      <Chip {...args} State="Selected" label="Grocery" />
+      <Chip {...args} State="Disabled" label="Grocery" />
     </div>
-  ),
+  )
 };
+

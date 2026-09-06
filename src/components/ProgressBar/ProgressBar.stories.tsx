@@ -30,6 +30,10 @@ const meta: Meta<typeof ProgressBar> = {
       control: { type: 'range', min: 0, max: 100, step: 1 },
       description: 'Progress Percentage (0 - 100)',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -57,37 +61,49 @@ export const SuccessState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    progress: 65,
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
         maxWidth: '400px',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Default (Blue #3488DC)
         </h4>
-        <ProgressBar State="Default" progress={50} />
+        <ProgressBar {...args} State="Default" progress={50} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Error (Red #DC2626)
         </h4>
-        <ProgressBar State="Error" progress={50} />
+        <ProgressBar {...args} State="Error" progress={50} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Success (Green #16A34A)
         </h4>
-        <ProgressBar State="Success" progress={50} />
+        <ProgressBar {...args} State="Success" progress={50} />
       </div>
     </div>
   ),
 };
+

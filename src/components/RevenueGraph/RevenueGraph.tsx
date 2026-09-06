@@ -5,6 +5,8 @@ export interface RevenueGraphProps {
   /** Variant parameter from Figma: Range */
   Range?: '7D' | '30D' | '90D' | '1Y';
   title?: string;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onRangeChange?: (range: '7D' | '30D' | '90D' | '1Y') => void;
   className?: string;
   style?: React.CSSProperties;
@@ -45,6 +47,7 @@ const DATA_BY_RANGE = {
 export const RevenueGraph: React.FC<RevenueGraphProps> = ({
   Range = '7D',
   title,
+  darkMode = false,
   onRangeChange,
   className = '',
   style,
@@ -66,8 +69,11 @@ export const RevenueGraph: React.FC<RevenueGraphProps> = ({
 
   return (
     <div
-      className={`uedp-revenuegraph uedp-revenuegraph--${activeRange.toLowerCase()} ${className}`}
+      className={`uedp-revenuegraph uedp-revenuegraph--${activeRange.toLowerCase()} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
+      role="region"
+      aria-label={`Revenue chart: ${displayTitle}`}
       {...props}
     >
       {/* Header Frame 2147225032 (370px x 30px) */}
@@ -76,20 +82,20 @@ export const RevenueGraph: React.FC<RevenueGraphProps> = ({
           <h3 className="uedp-revenuegraph-title">{displayTitle}</h3>
           
           {/* Legend Row Frame 2147225031 */}
-          <div className="uedp-revenuegraph-legend">
+          <div className="uedp-revenuegraph-legend" aria-label="Chart Legend">
             <div className="uedp-revenuegraph-legend-item">
-              <span className="uedp-revenuegraph-dot uedp-revenuegraph-dot--primary" />
+              <span className="uedp-revenuegraph-dot uedp-revenuegraph-dot--primary" aria-hidden="true" />
               <span className="uedp-revenuegraph-legend-text">Walk in sales</span>
             </div>
             <div className="uedp-revenuegraph-legend-item">
-              <span className="uedp-revenuegraph-dot uedp-revenuegraph-dot--secondary" />
+              <span className="uedp-revenuegraph-dot uedp-revenuegraph-dot--secondary" aria-hidden="true" />
               <span className="uedp-revenuegraph-legend-text">Online sales</span>
             </div>
           </div>
         </div>
 
         {/* Range Selector Segmented Tabs Frame 2147225029 */}
-        <div className="uedp-revenuegraph-tabs">
+        <div className="uedp-revenuegraph-tabs" role="tablist" aria-label="Time range">
           {(['7D', '30D', '90D', '1Y'] as const).map((r) => {
             const isActive = activeRange === r;
             return (
@@ -98,6 +104,9 @@ export const RevenueGraph: React.FC<RevenueGraphProps> = ({
                 type="button"
                 className={`uedp-revenuegraph-tab ${isActive ? 'uedp-revenuegraph-tab--active' : ''}`}
                 onClick={() => handleTabClick(r)}
+                role="tab"
+                aria-selected={isActive}
+                aria-label={`View ${r} revenue range`}
               >
                 {r}
               </button>
@@ -109,7 +118,7 @@ export const RevenueGraph: React.FC<RevenueGraphProps> = ({
       {/* Graph Body Frame 2147225044 (370px x 155px) */}
       <div className="uedp-revenuegraph-chart">
         {/* Y-Axis Grid Lines & Numbers */}
-        <div className="uedp-revenuegraph-grid">
+        <div className="uedp-revenuegraph-grid" aria-hidden="true">
           {[5, 4, 3, 2, 1].map((val) => (
             <div key={val} className="uedp-revenuegraph-grid-row">
               <span className="uedp-revenuegraph-y-label">{val}</span>
@@ -123,6 +132,7 @@ export const RevenueGraph: React.FC<RevenueGraphProps> = ({
           className="uedp-revenuegraph-svg"
           viewBox="0 0 360 145"
           preserveAspectRatio="none"
+          aria-hidden="true"
         >
           {/* Secondary Trend Line */}
           <path

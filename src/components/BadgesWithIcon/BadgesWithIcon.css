@@ -43,3 +43,39 @@
 .uedp-badgeswithicon-text {
   white-space: nowrap;
 }
+
+/* Dark Mode State */
+.uedp-badgeswithicon.uedp-dark.uedp-badgeswithicon--self-delivery,
+[data-theme='dark'] .uedp-badgeswithicon--self-delivery {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-badgeswithicon.uedp-dark.uedp-badgeswithicon--self-delivery .uedp-badgeswithicon-icon,
+[data-theme='dark'] .uedp-badgeswithicon--self-delivery .uedp-badgeswithicon-icon {
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-badgeswithicon.uedp-dark.uedp-badgeswithicon--myhub-delivery,
+[data-theme='dark'] .uedp-badgeswithicon--myhub-delivery {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.uedp-badgeswithicon.uedp-dark.uedp-badgeswithicon--myhub-delivery .uedp-badgeswithicon-icon,
+[data-theme='dark'] .uedp-badgeswithicon--myhub-delivery .uedp-badgeswithicon-icon {
+  color: #4ade80;
+}
+
+.uedp-badgeswithicon:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-badgeswithicon.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-badgeswithicon:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

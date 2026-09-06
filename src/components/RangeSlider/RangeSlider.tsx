@@ -10,6 +10,8 @@ export interface RangeSliderProps {
   max?: number;
   /** Dual range value tuple [minVal, maxVal]. Default [20, 80] */
   value?: [number, number];
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onChange?: (val: [number, number]) => void;
   className?: string;
   style?: React.CSSProperties;
@@ -25,6 +27,7 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
   min = 0,
   max = 100,
   value = [20, 80],
+  darkMode = false,
   onChange,
   className = '',
   style,
@@ -64,7 +67,8 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
 
   return (
     <div
-      className={`uedp-rangeslider ${stateClass} ${className}`}
+      className={`uedp-rangeslider ${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       {...props}
     >
@@ -88,6 +92,11 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
           max={max}
           value={range[0]}
           disabled={isDisabled}
+          aria-disabled={isDisabled}
+          aria-label="Minimum Range Value"
+          aria-valuenow={range[0]}
+          aria-valuemin={min}
+          aria-valuemax={max}
           onChange={handleLeftChange}
           onFocus={() => setActiveThumb('left')}
           onBlur={() => setActiveThumb(null)}
@@ -99,6 +108,11 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
           max={max}
           value={range[1]}
           disabled={isDisabled}
+          aria-disabled={isDisabled}
+          aria-label="Maximum Range Value"
+          aria-valuenow={range[1]}
+          aria-valuemin={min}
+          aria-valuemax={max}
           onChange={handleRightChange}
           onFocus={() => setActiveThumb('right')}
           onBlur={() => setActiveThumb(null)}

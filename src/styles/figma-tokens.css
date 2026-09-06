@@ -356,3 +356,42 @@
   --uedp-semantic-feedback-info-text: var(--uedp-sky-800);
   --uedp-semantic-feedback-info-border: var(--uedp-sky-200);
 }
+
+/* Dark Mode Semantic Tokens */
+[data-theme='dark'],
+.dark-mode,
+.uedp-dark,
+.dark {
+  --uedp-black: #ffffff;
+  --uedp-white: #0f172a;
+  --uedp-semantic-text-primary: var(--uedp-slate-100);
+  --uedp-semantic-text-secondary: var(--uedp-slate-300);
+  --uedp-semantic-text-muted: var(--uedp-slate-400);
+  --uedp-semantic-text-inverse: var(--uedp-slate-900);
+  --uedp-semantic-text-link: var(--uedp-blue-400);
+  --uedp-semantic-surface-primary: #1e293b;
+  --uedp-semantic-surface-secondary: #0f172a;
+  --uedp-semantic-surface-tertiary: #334155;
+  --uedp-semantic-surface-inverse: var(--uedp-slate-100);
+  --uedp-semantic-surface-elevated: #1e293b;
+  --uedp-semantic-border-default: #334155;
+  --uedp-semantic-border-strong: #475569;
+  --uedp-semantic-border-focus: var(--uedp-blue-400);
+  --uedp-semantic-interactive-default: var(--uedp-blue-500);
+  --uedp-semantic-interactive-hover: var(--uedp-blue-400);
+  --uedp-semantic-interactive-pressed: var(--uedp-blue-600);
+  --uedp-semantic-interactive-disabled: #475569;
+  --uedp-semantic-feedback-success-bg: rgba(22, 163, 74, 0.15);
+  --uedp-semantic-feedback-success-text: #4ade80;
+  --uedp-semantic-feedback-success-border: rgba(34, 197, 94, 0.3);
+  --uedp-semantic-feedback-warning-bg: rgba(217, 119, 6, 0.15);
+  --uedp-semantic-feedback-warning-text: #fbbf24;
+  --uedp-semantic-feedback-warning-border: rgba(245, 158, 11, 0.3);
+  --uedp-semantic-feedback-error-bg: rgba(220, 38, 38, 0.15);
+  --uedp-semantic-feedback-error-text: #f87171;
+  --uedp-semantic-feedback-error-border: rgba(239, 68, 68, 0.3);
+  --uedp-semantic-feedback-info-bg: rgba(14, 165, 233, 0.15);
+  --uedp-semantic-feedback-info-text: #38bdf8;
+  --uedp-semantic-feedback-info-border: rgba(14, 165, 233, 0.3);
+}
+

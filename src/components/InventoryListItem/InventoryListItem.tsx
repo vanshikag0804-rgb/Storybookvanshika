@@ -14,6 +14,8 @@ export interface InventoryListItemProps {
   price?: string;
   originalPrice?: string;
   image?: string;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -37,6 +39,7 @@ export const InventoryListItem: React.FC<InventoryListItemProps> = ({
   price = '₹8,500',
   originalPrice = '₹21,000',
   image = DEFAULT_PERFUME_IMAGE,
+  darkMode = false,
   className = '',
   style,
   onClick,
@@ -45,11 +48,25 @@ export const InventoryListItem: React.FC<InventoryListItemProps> = ({
   const stateClass = String(Status).toLowerCase().replace(/\s+/g, '-');
   const fillPercent = Status === 'Out of Stock' ? 0 : Math.min(100, Math.max(0, (stock / maxStock) * 100));
 
+  const isInteractive = Boolean(onClick);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (onClick && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <div
-      className={`uedp-inventorylistitem uedp-inventorylistitem--${stateClass} ${className}`}
+      className={`uedp-inventorylistitem uedp-inventorylistitem--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       onClick={onClick}
+      role={isInteractive ? 'button' : 'article'}
+      tabIndex={isInteractive ? 0 : undefined}
+      onKeyDown={isInteractive ? handleKeyDown : undefined}
+      aria-label={`Inventory item: ${title}, ${brand}, stock ${stock} of ${maxStock}, price ${price}`}
       {...props}
     >
       <div className="uedp-inventorylistitem-image-container">
@@ -72,20 +89,26 @@ export const InventoryListItem: React.FC<InventoryListItemProps> = ({
       <div className="uedp-inventorylistitem-content">
         <div className="uedp-inventorylistitem-top">
           <span className="uedp-inventorylistitem-title">{title}</span>
-          <button type="button" className="uedp-inventorylistitem-more-btn" aria-label="More options">
-            <MoreVertical size={16} className="uedp-inventorylistitem-more-icon" />
+          <button
+            type="button"
+            className="uedp-inventorylistitem-more-btn"
+            aria-label={`More options for ${title}`}
+            aria-haspopup="true"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <MoreVertical size={16} className="uedp-inventorylistitem-more-icon" aria-hidden="true" />
           </button>
         </div>
 
         <div className="uedp-inventorylistitem-middle">
           <span className="uedp-inventorylistitem-brand">{brand}</span>
-          <span className="uedp-inventorylistitem-dot">•</span>
+          <span className="uedp-inventorylistitem-dot" aria-hidden="true">•</span>
           <span className="uedp-inventorylistitem-category">{category}</span>
         </div>
 
         <div className="uedp-inventorylistitem-bottom">
           <div className="uedp-inventorylistitem-stock">
-            <div className="uedp-inventorylistitem-stock-bar-track">
+            <div className="uedp-inventorylistitem-stock-bar-track" aria-hidden="true">
               <div
                 className="uedp-inventorylistitem-stock-bar-fill"
                 style={{ width: `${fillPercent}%` }}

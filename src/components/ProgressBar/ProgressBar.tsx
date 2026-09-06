@@ -6,6 +6,8 @@ export interface ProgressBarProps {
   State?: 'Default' | 'Error' | 'Success';
   /** Progress percentage (0 to 100). Default is 50 per Figma spec */
   progress?: number;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   className?: string;
   style?: React.CSSProperties;
   [key: string]: any;
@@ -18,6 +20,7 @@ export interface ProgressBarProps {
 export const ProgressBar: React.FC<ProgressBarProps> = ({
   State = 'Default',
   progress = 50,
+  darkMode = false,
   className = '',
   style,
   ...props
@@ -28,12 +31,14 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <div
-      className={`uedp-progressbar ${variantClass} ${className}`}
+      className={`uedp-progressbar ${variantClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       role="progressbar"
       aria-valuenow={clampedProgress}
       aria-valuemin={0}
       aria-valuemax={100}
+      aria-label={props['aria-label'] || props.ariaLabel || `Progress: ${clampedProgress}%`}
       {...props}
     >
       <div

@@ -27,6 +27,10 @@ const meta: Meta<typeof Navbar> = {
       "Dashboard"
     ],
     "description": "Figma Variant Property: Active"
+  },
+  "darkMode": {
+    "control": "boolean",
+    "description": "Enable Dark Mode state"
   }
 },
 };
@@ -36,6 +40,18 @@ type Story = StoryObj<typeof Navbar>;
 
 export const Default: Story = {
   args: {
-  "Active": "POS"
-},
+    "Active": "POS",
+    darkMode: false
+  },
 };
+
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    "Active": "POS",
+    "darkMode": true
+  },
+};
+

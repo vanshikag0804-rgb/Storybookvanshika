@@ -6,6 +6,8 @@ export interface QuantityControlProps {
   State?: 'Add' | 'Default' | 'Focused' | 'Ineactive' | 'Inactive';
   /** Quantity number value. Default is 1 per Figma spec */
   quantity?: number;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onAdd?: () => void;
   onIncrease?: () => void;
   onDecrease?: () => void;
@@ -22,6 +24,7 @@ export interface QuantityControlProps {
 export const QuantityControl: React.FC<QuantityControlProps> = ({
   State = 'Add',
   quantity = 1,
+  darkMode = false,
   onAdd,
   onIncrease,
   onDecrease,
@@ -71,7 +74,8 @@ export const QuantityControl: React.FC<QuantityControlProps> = ({
 
   return (
     <div
-      className={`uedp-quantitycontrol ${variantClass} ${className}`}
+      className={`uedp-quantitycontrol ${variantClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       {...props}
     >
@@ -94,7 +98,7 @@ export const QuantityControl: React.FC<QuantityControlProps> = ({
             onClick={handleDecreaseClick}
             aria-label="Decrease quantity"
           >
-            <svg width="12" height="2" viewBox="0 0 12 2" fill="none">
+            <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true">
               <path d="M1 1H11" stroke="#256FB7" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
@@ -104,6 +108,8 @@ export const QuantityControl: React.FC<QuantityControlProps> = ({
             className={`uedp-quantitycontrol-val-box ${
               isFocusedState ? 'uedp-quantitycontrol-val-box--focused' : ''
             }`}
+            aria-live="polite"
+            aria-label={`Current quantity ${currentQty}`}
           >
             <span>{currentQty}</span>
           </div>
@@ -115,7 +121,7 @@ export const QuantityControl: React.FC<QuantityControlProps> = ({
             onClick={handleIncreaseClick}
             aria-label="Increase quantity"
           >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M6 1V11M1 6H11" stroke="#256FB7" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>

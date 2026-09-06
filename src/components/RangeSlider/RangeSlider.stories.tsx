@@ -28,6 +28,7 @@ const meta: Meta<typeof RangeSlider> = {
     },
     min: { control: 'number', description: 'Minimum Value' },
     max: { control: 'number', description: 'Maximum Value' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
 };
 
@@ -55,8 +56,19 @@ export const DisabledState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    value: [20, 80],
+    darkMode: true,
+  },
+};
+
 export const Interactive: Story = {
-  render: () => {
+  render: (args) => {
     const [val, setVal] = useState<[number, number]>([25, 75]);
     return (
       <div
@@ -64,53 +76,54 @@ export const Interactive: Story = {
           display: 'flex',
           flexDirection: 'column',
           gap: '16px',
-          backgroundColor: '#F8FAFC',
+          backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
           padding: '24px',
           borderRadius: '16px',
           maxWidth: '360px',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'Inter, sans-serif', fontSize: '14px', color: '#1E293B' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'Inter, sans-serif', fontSize: '14px', color: args.darkMode ? '#F8FAFC' : '#1E293B' }}>
           <span>Price Range:</span>
           <strong>₹{val[0]} - ₹{val[1]}</strong>
         </div>
-        <RangeSlider State="Default" value={val} onChange={setVal} />
+        <RangeSlider {...args} State="Default" value={val} onChange={setVal} />
       </div>
     );
   },
 };
 
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
         maxWidth: '360px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Default
         </h4>
-        <RangeSlider State="Default" value={[20, 80]} />
+        <RangeSlider {...args} State="Default" value={[20, 80]} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Focused (White Thumb Dots)
         </h4>
-        <RangeSlider State="Focused" value={[20, 80]} />
+        <RangeSlider {...args} State="Focused" value={[20, 80]} />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Disabled
         </h4>
-        <RangeSlider State="Disabled" value={[20, 80]} />
+        <RangeSlider {...args} State="Disabled" value={[20, 80]} />
       </div>
     </div>
   ),
 };
+

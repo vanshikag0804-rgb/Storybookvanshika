@@ -34,6 +34,10 @@ const meta: Meta<typeof RadioButton> = {
       control: 'boolean',
       description: 'Disabled State',
     },
+    darkMode: {
+      control: 'boolean',
+      description: 'Enable Dark Mode state',
+    },
   },
 };
 
@@ -60,8 +64,19 @@ export const Selected: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Selected',
+    label: 'Selected Option',
+    darkMode: true,
+  },
+};
+
 export const InteractiveGroup: Story = {
-  render: () => {
+  render: (args) => {
     const [selectedOption, setSelectedOption] = useState<'upi' | 'card' | 'cash'>('upi');
     return (
       <div
@@ -69,26 +84,29 @@ export const InteractiveGroup: Story = {
           display: 'flex',
           flexDirection: 'column',
           gap: '16px',
-          backgroundColor: '#F8FAFC',
+          backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
           padding: '24px',
           borderRadius: '16px',
           maxWidth: '300px',
         }}
       >
-        <h4 style={{ margin: '0 0 8px 0', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '14px' }}>
+        <h4 style={{ margin: '0 0 8px 0', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '14px' }}>
           Select Payment Method
         </h4>
         <RadioButton
+          {...args}
           State={selectedOption === 'upi' ? 'Selected' : 'Unselected'}
           label="UPI Payment"
           onClick={() => setSelectedOption('upi')}
         />
         <RadioButton
+          {...args}
           State={selectedOption === 'card' ? 'Selected' : 'Unselected'}
           label="Credit / Debit Card"
           onClick={() => setSelectedOption('card')}
         />
         <RadioButton
+          {...args}
           State={selectedOption === 'cash' ? 'Selected' : 'Unselected'}
           label="Cash on Delivery"
           onClick={() => setSelectedOption('cash')}
@@ -99,29 +117,30 @@ export const InteractiveGroup: Story = {
 };
 
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         gap: '32px',
         alignItems: 'center',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Unselected
         </h4>
-        <RadioButton State="Unselected" label="Unselected" />
+        <RadioButton {...args} State="Unselected" label="Unselected" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '8px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Selected
         </h4>
-        <RadioButton State="Selected" label="Selected" />
+        <RadioButton {...args} State="Selected" label="Selected" />
       </div>
     </div>
   ),
 };
+

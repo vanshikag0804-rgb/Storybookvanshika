@@ -282,3 +282,54 @@
 .uedp-productcard-pill--inactive .uedp-productcard-pill-text {
   color: var(--uedp-slate-400, #94a3b8);
 }
+
+/* Dark Mode State */
+.uedp-productcard.uedp-dark,
+[data-theme='dark'] .uedp-productcard {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-img-container,
+[data-theme='dark'] .uedp-productcard-img-container {
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-title,
+[data-theme='dark'] .uedp-productcard-title {
+  color: #F8FAFC;
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-desc,
+[data-theme='dark'] .uedp-productcard-desc {
+  color: #94A3B8;
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-pill--add,
+[data-theme='dark'] .uedp-productcard-pill--add {
+  background-color: #334155;
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-pill-text,
+[data-theme='dark'] .uedp-productcard-pill-text {
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-productcard-pill--add:focus-visible,
+.uedp-productcard-qty-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-productcard.uedp-dark .uedp-productcard-pill--add:focus-visible,
+[data-theme='dark'] .uedp-productcard-pill--add:focus-visible,
+.uedp-productcard.uedp-dark .uedp-productcard-qty-btn:focus-visible,
+[data-theme='dark'] .uedp-productcard-qty-btn:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

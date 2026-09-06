@@ -201,3 +201,61 @@
   line-height: 14px;
   color: #131313;
 }
+
+/* Dark Mode State */
+.uedp-revenuegraph.uedp-dark,
+[data-theme='dark'] .uedp-revenuegraph {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-title,
+[data-theme='dark'] .uedp-revenuegraph-title {
+  color: #F8FAFC;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-legend-text,
+[data-theme='dark'] .uedp-revenuegraph-legend-text,
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-y-label,
+[data-theme='dark'] .uedp-revenuegraph-y-label,
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-x-label,
+[data-theme='dark'] .uedp-revenuegraph-x-label {
+  color: #94A3B8;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-tabs,
+[data-theme='dark'] .uedp-revenuegraph-tabs {
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-tab,
+[data-theme='dark'] .uedp-revenuegraph-tab {
+  color: #94A3B8;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-tab--active,
+[data-theme='dark'] .uedp-revenuegraph-tab--active {
+  background-color: var(--uedp-blue-600, #2563EB);
+  color: #FFFFFF;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-grid-line,
+[data-theme='dark'] .uedp-revenuegraph-grid-line {
+  background-color: #334155;
+}
+
+.uedp-revenuegraph-tab:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-revenuegraph.uedp-dark .uedp-revenuegraph-tab:focus-visible,
+[data-theme='dark'] .uedp-revenuegraph-tab:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

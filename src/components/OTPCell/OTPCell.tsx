@@ -7,6 +7,8 @@ export interface OTPCellProps {
   value?: string;
   placeholder?: string;
   disabled?: boolean;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   onChange?: (val: string) => void;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -25,6 +27,7 @@ export const OTPCell: React.FC<OTPCellProps> = ({
   value = '',
   placeholder = '',
   disabled = false,
+  darkMode = false,
   onChange,
   onFocus,
   onBlur,
@@ -54,7 +57,8 @@ export const OTPCell: React.FC<OTPCellProps> = ({
 
   return (
     <div
-      className={`uedp-otpcell uedp-otpcell--${stateClass} ${disabled ? 'uedp-otpcell--disabled' : ''} ${className}`}
+      className={`uedp-otpcell uedp-otpcell--${stateClass} ${disabled ? 'uedp-otpcell--disabled' : ''} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       onClick={onClick}
     >
@@ -65,6 +69,10 @@ export const OTPCell: React.FC<OTPCellProps> = ({
         value={value}
         placeholder={placeholder}
         disabled={disabled}
+        aria-disabled={disabled}
+        aria-invalid={State === 'Error'}
+        aria-label={props['aria-label'] || props.ariaLabel || 'OTP digit entry'}
+        autoComplete="one-time-code"
         className="uedp-otpcell-input"
         onChange={handleChange}
         onFocus={() => {

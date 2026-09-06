@@ -32,6 +32,7 @@ const meta: Meta<typeof ProductCard> = {
     originalPrice: { control: 'text', description: 'Original MRP Price' },
     imageSrc: { control: 'text', description: 'Product Image Path' },
     quantity: { control: 'number', description: 'Selected Quantity' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
 };
 
@@ -95,48 +96,64 @@ export const InactiveState: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Default',
+    title: 'Turmeric Powder',
+    description: 'Enhance your dishes with our vibrant',
+    price: '₹187',
+    originalPrice: '₹220',
+    imageSrc: '/assets/turmeric_powder.jpg',
+    darkMode: true,
+  },
+};
+
 export const AllStates: Story = {
-  render: () => (
+  render: (args) => (
     <div
       style={{
         display: 'flex',
         gap: '24px',
         flexWrap: 'wrap',
-        backgroundColor: '#F8FAFC',
+        backgroundColor: args.darkMode ? '#0F172A' : '#F8FAFC',
         padding: '24px',
         borderRadius: '16px',
       }}
     >
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Default
         </h4>
-        <ProductCard State="Default" />
+        <ProductCard {...args} State="Default" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Added
         </h4>
-        <ProductCard State="Added" />
+        <ProductCard {...args} State="Added" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Edit
         </h4>
-        <ProductCard State="Edit" />
+        <ProductCard {...args} State="Edit" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Low Stock
         </h4>
-        <ProductCard State="Low Stock" />
+        <ProductCard {...args} State="Low Stock" />
       </div>
       <div>
-        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: '#475569', fontSize: '13px' }}>
+        <h4 style={{ marginBottom: '12px', fontFamily: 'Inter, sans-serif', color: args.darkMode ? '#94A3B8' : '#475569', fontSize: '13px' }}>
           State = Inactive
         </h4>
-        <ProductCard State="Inactive" />
+        <ProductCard {...args} State="Inactive" />
       </div>
     </div>
   ),
 };
+

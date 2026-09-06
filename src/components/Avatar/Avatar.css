@@ -34,3 +34,35 @@
   border-radius: 50%;
   aspect-ratio: 1 / 1;
 }
+
+/* Dark Mode State */
+.uedp-avatar.uedp-dark,
+[data-theme='dark'] .uedp-avatar {
+  background-color: var(--uedp-semantic-surface-tertiary, #334155);
+  border: 1px solid var(--uedp-semantic-border-default, #475569);
+  color: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-avatar.uedp-dark .uedp-avatar-icon circle,
+[data-theme='dark'] .uedp-avatar .uedp-avatar-icon circle {
+  fill: var(--uedp-blue-400, #60A5FA);
+  stroke: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-avatar.uedp-dark .uedp-avatar-icon path,
+[data-theme='dark'] .uedp-avatar .uedp-avatar-icon path {
+  stroke: var(--uedp-blue-400, #60A5FA);
+}
+
+.uedp-avatar:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-avatar.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-avatar:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

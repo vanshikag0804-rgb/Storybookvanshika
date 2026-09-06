@@ -29,10 +29,11 @@ const meta: Meta<typeof OTPCell> = {
     value: { control: 'text', description: 'Input value' },
     placeholder: { control: 'text', description: 'Placeholder' },
     disabled: { control: 'boolean', description: 'Disabled state' },
+    darkMode: { control: 'boolean', description: 'Enable Dark Mode state' },
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: '#F1F5F9', borderRadius: '12px' }}>
+    (Story, context) => (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px', backgroundColor: context.globals.backgrounds?.value === '#0F172A' || context.args?.darkMode ? '#0F172A' : '#F1F5F9', borderRadius: '12px' }}>
         <Story />
       </div>
     ),
@@ -70,17 +71,29 @@ export const Error: Story = {
   },
 };
 
+export const DarkMode: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+  args: {
+    State: 'Filled',
+    value: '7',
+    darkMode: true,
+  },
+};
+
 export const OTPGroup: Story = {
   parameters: {
     controls: { exclude: ['State', 'value'] },
   },
-  render: () => {
+  render: (args) => {
     const [otp, setOtp] = useState(['5', '2', '', '']);
     return (
       <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
         {otp.map((val, idx) => (
           <OTPCell
             key={idx}
+            {...args}
             value={val}
             State={idx === 2 ? 'Focused' : val ? 'Filled' : 'Empty'}
             onChange={(newVal) => {
@@ -94,4 +107,5 @@ export const OTPGroup: Story = {
     );
   },
 };
+
 

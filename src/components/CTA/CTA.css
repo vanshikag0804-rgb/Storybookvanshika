@@ -60,3 +60,43 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Dark Mode State */
+.uedp-cta.uedp-dark.uedp-cta--primary,
+[data-theme='dark'] .uedp-cta--primary {
+  background-color: var(--uedp-blue-600, #2563EB);
+  color: #FFFFFF;
+  border-color: var(--uedp-blue-600, #2563EB);
+}
+
+.uedp-cta.uedp-dark.uedp-cta--secondary,
+[data-theme='dark'] .uedp-cta--secondary {
+  background-color: #334155;
+  color: #F8FAFC;
+  border-color: #475569;
+}
+
+.uedp-cta.uedp-dark.uedp-cta--secondary:hover:not(:disabled),
+[data-theme='dark'] .uedp-cta--secondary:hover:not(:disabled) {
+  background-color: #475569;
+}
+
+.uedp-cta.uedp-dark.uedp-cta--disabled,
+[data-theme='dark'] .uedp-cta--disabled {
+  background-color: #1E293B;
+  color: #64748B;
+  border-color: transparent;
+}
+
+.uedp-cta:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-cta.uedp-dark:focus-visible,
+[data-theme='dark'] .uedp-cta:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+

@@ -6,6 +6,8 @@ export interface ChipProps {
   State?: 'Default' | 'Selected' | 'Disabled';
   /** Text label content for the chip */
   label?: string;
+  /** Enable Dark Mode state */
+  darkMode?: boolean;
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -20,6 +22,7 @@ export interface ChipProps {
 export const Chip: React.FC<ChipProps> = ({
   State = 'Default',
   label = 'Grocery',
+  darkMode = false,
   children,
   className = '',
   style,
@@ -30,11 +33,17 @@ export const Chip: React.FC<ChipProps> = ({
   const stateClass = String(State).toLowerCase().replace(/\s+/g, '-');
   const displayLabel = children || label;
 
+  const isSelected = State.toLowerCase() === 'selected';
+
   return (
     <button
-      className={`uedp-chip uedp-chip--${stateClass} ${className}`}
+      className={`uedp-chip uedp-chip--${stateClass} ${darkMode ? 'uedp-dark' : ''} ${className}`}
+      data-theme={darkMode ? 'dark' : undefined}
       style={style}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
+      aria-pressed={isSelected}
+      aria-label={typeof displayLabel === 'string' ? displayLabel : undefined}
       onClick={onClick}
       {...props}
     >
@@ -42,3 +51,4 @@ export const Chip: React.FC<ChipProps> = ({
     </button>
   );
 };
+

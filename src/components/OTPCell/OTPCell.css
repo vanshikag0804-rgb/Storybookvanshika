@@ -84,3 +84,47 @@
   cursor: not-allowed;
 }
 
+/* Dark Mode State */
+.uedp-otpcell.uedp-dark,
+[data-theme='dark'] .uedp-otpcell {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+.uedp-otpcell.uedp-dark .uedp-otpcell-input,
+[data-theme='dark'] .uedp-otpcell .uedp-otpcell-input {
+  color: #F8FAFC;
+}
+
+.uedp-otpcell.uedp-dark .uedp-otpcell-input::placeholder,
+[data-theme='dark'] .uedp-otpcell .uedp-otpcell-input::placeholder {
+  color: #64748B;
+}
+
+.uedp-otpcell.uedp-dark.uedp-otpcell--focused,
+[data-theme='dark'] .uedp-otpcell--focused,
+[data-theme='dark'] .uedp-otpcell:focus-within {
+  border-color: var(--uedp-blue-400, #60A5FA);
+  background-color: #1E293B;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.uedp-otpcell.uedp-dark.uedp-otpcell--disabled,
+[data-theme='dark'] .uedp-otpcell--disabled {
+  background-color: #0F172A;
+  border-color: #334155;
+}
+
+.uedp-otpcell-input:focus-visible {
+  outline: 2px solid var(--uedp-blue-500, #3488DC);
+  outline-offset: 2px;
+}
+
+.uedp-otpcell.uedp-dark .uedp-otpcell-input:focus-visible,
+[data-theme='dark'] .uedp-otpcell-input:focus-visible {
+  outline: 2px solid var(--uedp-blue-400, #60A5FA);
+  outline-offset: 2px;
+}
+
+
+
